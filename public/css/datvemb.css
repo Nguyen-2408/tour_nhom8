@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 62.5%;
+    font-family: 'Inter', sans-serif;
+    background-color: #eee;
+    scroll-behavior: smooth;
+}   
+header {
+    width: 100%;
+    height: 8rem;
+    background: rgb(255, 255, 255);
+    position: fixed;
+    transition: background 0.25s linear;
+    z-index: 99;
+    border-bottom: 1px solid #ccc;
+}
+
+header:hover {
+
+}
+
+.head_menu {
+    display: flex;
+    padding: 0 16rem 0 3rem;
+    justify-content: space-between;
+}
+
+.text_logo {
+    font-size: 3.2rem;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 5rem;
+    color:#000;
+}
+
+
+
+.nav_menu {
+    margin-top: 1rem;
+    margin-left: 3rem;
+    position: absolute;
+}
+
+.list_menu {
+    display: flex;
+    height: 2.5rem;
+}
+
+.list_item {
+    padding: 0 4rem 0 4rem;
+    list-style-type: none;
+    height: 100%;
+    line-height: 25px;
+    position: relative;
+    cursor: pointer;  
+}
+.list_item::before  {
+    content:'';
+    bottom:0;
+    left: 0;
+    width:0;
+    height:0;
+    position: absolute;
+    background-color: #2cccff;
+    z-index: -1;
+    transition:height 0.1s linear , width 0.25s linear 0.1s;
+}
+.list_item:hover::before {
+    height:3px;
+    width:100%;
+}
+.list_item:hover .menu_link{
+    color: #000;
+}
+
+.menu_link {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 16px;
+    color: rgb(83, 83, 83);
+    transition: 0.25s linear;
+}
+
+.wrap_user_info{
+    position: relative;
+}
+
+.user_info {
+    position: relative;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    top:20px;
+}
+
+.user_image {
+    width: 40px;
+    height:40px;
+    border: 2px solid #afafaf;
+    border-radius: 50%;
+}
+
+.user_name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    cursor:default;
+    margin-left: 10px;
+}
+
+.wrap_user-info:hover .nav_user-list {
+    display: block;
+}
+
+.nav_user-info {
+    line-height: 2;
+    position: absolute;
+    top:0;
+    right:0;
+    transform: translate(-100%,40%);
+    border:1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.nav_user-list {
+    display: none;
+    list-style-type: none;
+}
+
+.nav_user-list::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 20px;
+    transform: translateY(-100%);
+}
+
+.nav_user-item {
+    padding:5px 20px;
+    cursor: pointer;
+    transition: 0.25s linear;
+}
+
+.nav_user-item:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.nav_user-item:last-child {
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+
+.nav_user-item:hover {
+    background-color: #ccc;
+}
+
+.nav_user-link {
+    text-decoration: none;
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.cart_amount {
+    position: absolute;
+    top:0;
+    right:0;
+    width: 50px;
+    height: 50px;
+    color: #2cccff;
+    font-size: 20px;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    transform: translate(-100%,30%);
+}
+
+h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-left:5rem;
+    margin-top: 3rem;
+}
+
+h5 {
+    font-size: 2rem;
+    margin:1.5rem;
+}
+
+.plane_ticket-in {
+    position: absolute;
+    top:8rem;
+    width: 100%;
+    padding: 3rem;
+}
+
+.plane_name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-left: 4rem;
+}
+
+.wrap_form_plane-in {
+    margin: 2rem 0 2rem 4rem;
+}
+
+.wrap_form_plane-in p {
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 3rem;
+}
+
+.form_plane-in {
+    border: 1px solid #ccc;
+    padding: 2rem 4rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+th {
+    font-size: 16px;
+    padding: 1rem;
+}
+
+
+.form_plane-in .input {
+    padding: 1rem 3rem;
+    margin: 2rem;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: 'Inter',sans-serif;
+}
+
+.wrap_cus-amount{
+    position: relative;
+}
+
+.plane_name-customer {
+    width: 400px;
+}
+
+.opt_age {
+    cursor:pointer;
+}
+
+
+.opt_sex {
+    cursor:pointer;
+}
+
+.btn_delete-input {
+    padding: 1rem;  
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+    background-color: #eee;
+    border: none;
+}
+
+.btn_delete-input:hover {
+    color: rgb(230, 72, 72);
+}
+
+.btn_add-input {
+    position: absolute;
+    right:50%;
+    bottom:0;
+    transform: translateY(60%);
+    padding: 1rem;  
+    border-radius: 50%;
+    outline: none;
+    border:1px solid #ccc;
+    font-size: 24px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+
+.btn_add-input:hover {
+    color:rgb(255, 255, 255);
+    background-color: rgb(92, 214, 102);
+}
+
+
+
+.tbl_plane-ticket tr, td{
+    border: 1px solid #ccc;
+}
+
+th:first-child{
+    text-align: left;
+}
+
+th:last-child {
+    text-align: center;
+    width: 50px;
+}
+td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.wrap_price-txt{
+    background-color: #2cccff;
+}
+
+.price_txt {
+    font-size: 14px;  
+    font-weight: 600;
+    position: absolute;
+    right: 0;
+    transform: translate(-5rem, 0);
+}
+.txt2 {
+    transform: translate(-5rem, 120%);
+}
+
+.amount_cus-text {
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 10px;
+    right: 10%;
+    border-radius: 10px;
+    background-color: #b5e1f1;
+    padding: 2rem;
+    
+}
+
+.amount_cus{
+    font-size: 18px;
+    font-weight: 800;
+    padding: 1rem;
+}
+
+
+.wrap_content-customer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact_customer {
+    margin-top:2rem;
+    padding: 2rem;
+    border:1px solid #ccc;
+    margin-left:4rem;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.contact_customer-form p{
+    font-size: 18px;
+    font-weight: 700;
+    padding: 2rem;
+}
+
+.contact_customer-form label {
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    top:0;
+    left:0;
+    transform: translatey(-100%);
+}
+
+.contact_customer-form input {
+    width: 100%;
+    padding: 10px 15px 10px 5px;
+    border-radius:10px;
+    font-size: 16px;
+    outline: none;
+    border:1px solid #ccc;
+}
+
+.contact_customer-form .contact_customer-item:nth-child(3) input {
+    width: 50%;;
+}
+
+.contact_customer-item {
+    margin: 30px;
+    position: relative;
+}
+
+.wrap_ticket-price {
+    padding: 2rem;
+    margin-top:2rem;
+    border:1px solid #ccc;
+    border-radius: 10px;
+}
+
+.ticket_price {
+    width: 400px;  
+}
+
+.title_price {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 2rem;
+}
+
+.ticket_price-item {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.ticket_price-item label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.ticket_price-item p,span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btn_book {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color:#000;
+    margin-top: 2rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.btn_book:hover {
+    background-color: #2cccff;
+    color:#fff;
+    transform: scale(1.05);
+}
+
