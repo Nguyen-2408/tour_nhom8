@@ -1,0 +1,261 @@
+
+.plane_ticket-in {
+    position: absolute;
+    top:8rem;
+    width: 100%;
+    padding: 3rem;
+}
+
+.plane_name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-left: 4rem;
+}
+
+.wrap_form_plane-in {
+    margin: 2rem 0 2rem 4rem;
+}
+
+.wrap_form_plane-in p {
+    font-size: 16px;
+    font-weight: 600;
+    padding-bottom: 3rem;
+}
+
+.form_plane-in {
+    border: 1px solid #ccc;
+    padding: 2rem 4rem;
+    border-radius: 10px;
+    position: relative;
+}
+
+
+.form_plane-in .input {
+    padding: 1rem 3rem;
+    margin: 2rem;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    font-family: 'Inter',sans-serif;
+}
+
+.wrap_cus-amount{
+    position: relative;
+}
+
+.plane_name-customer {
+    width: 400px;
+}
+
+.opt_age {
+    cursor:pointer;
+}
+
+
+.opt_sex {
+    cursor:pointer;
+}
+
+.btn_delete-input {
+    padding: 1rem;  
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
+    background-color: #eee;
+    border: none;
+}
+
+.btn_delete-input:hover {
+    color: rgb(230, 72, 72);
+}
+
+.btn_add-input {
+    position: absolute;
+    right:50%;
+    bottom:0;
+    transform: translateY(60%);
+    padding: 1rem;  
+    border-radius: 50%;
+    outline: none;
+    border:1px solid #ccc;
+    font-size: 24px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: #ccc;
+}
+
+
+.btn_add-input:hover {
+    color:rgb(255, 255, 255);
+    background-color: rgb(92, 214, 102);
+}
+
+.tbl_plane-ticket th {
+    font-size: 16px;
+    padding: 1rem;
+}
+
+
+
+.tbl_plane-ticket tr, 
+.tbl_plane-ticket td{
+    border: 1px solid #ccc;
+}
+
+.tbl_plane-ticket th:first-child{
+    text-align: left;
+}
+
+.tbl_plane-ticket th:last-child {
+    text-align: center;
+    width: 50px;
+}
+.tbl_plane-ticket td:first-child {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.tbl_plane-ticket td:last-child {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.wrap_price-txt{
+    background-color: #2cccff;
+}
+
+.price_txt {
+    font-size: 14px;  
+    font-weight: 600;
+    position: absolute;
+    right: 0;
+    transform: translate(-5rem, 0);
+}
+.txt2 {
+    transform: translate(-5rem, 120%);
+}
+
+.amount_cus-text {
+    font-size: 16px;
+    font-weight: 600;
+    position: absolute;
+    bottom: 10px;
+    right: 10%;
+    border-radius: 10px;
+    background-color: #b5e1f1;
+    padding: 2rem;
+    
+}
+
+.amount_cus{
+    font-size: 18px;
+    font-weight: 800;
+    padding: 1rem;
+}
+
+
+.wrap_content-customer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.contact_customer {
+    margin-top:2rem;
+    padding: 2rem;
+    border:1px solid #ccc;
+    margin-left:4rem;
+    border-radius: 10px;
+    width: 60%;
+}
+
+.contact_customer-form p{
+    font-size: 18px;
+    font-weight: 700;
+    padding: 2rem;
+}
+
+.contact_customer-form label {
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    top:0;
+    left:0;
+    transform: translatey(-100%);
+}
+
+.contact_customer-form input {
+    width: 100%;
+    padding: 10px 15px 10px 5px;
+    border-radius:10px;
+    font-size: 16px;
+    outline: none;
+    border:1px solid #ccc;
+}
+
+.contact_customer-form .contact_customer-item:nth-child(3) input {
+    width: 50%;;
+}
+
+.contact_customer-item {
+    margin: 30px;
+    position: relative;
+}
+
+.wrap_ticket-price {
+    padding: 2rem;
+    margin-top:2rem;
+    border:1px solid #ccc;
+    border-radius: 10px;
+}
+
+.ticket_price {
+    width: 400px;  
+}
+
+.title_price {
+    font-size: 18px;
+    font-weight: 700;
+    padding: 2rem;
+}
+
+.ticket_price-item {
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.ticket_price-item label {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.ticket_price-item p,span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btn_book {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color:#000;
+    margin-top: 2rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    outline: none;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+
+.btn_book:hover {
+    background-color: #2cccff;
+    color:#fff;
+    transform: scale(1.05);
+}
+

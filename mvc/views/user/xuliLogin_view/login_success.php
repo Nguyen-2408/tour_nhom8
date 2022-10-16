@@ -4,16 +4,18 @@
 <div class="wrap_user-info">
     <div class="user_info">
     <?php
-        if(isset($data['avatar'])){
-            if($data['avatar'] == '') {
+        if(isset($_SESSION['user_id'])){
+            if($_SESSION['avatar'] == '') {
                 echo '<img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="" class="user_image">';
             }else {
-                echo '<img src="'.(_WEB_ROOT.'/images/avatars/'.$data['avatar'].'').'" alt="" class="user_image">';
+                echo '<img src="'.(_WEB_ROOT.'/images/avatars/'.$avatar.'').'" alt="" class="user_image">';
             }
         }
     
     ?>
-        <p class="user_name"><?php if(isset($data['username'])){echo $data['username'];} ?></p>
+        <p class="user_name"><?php if(isset($_SESSION['username']) && $_SESSION['username'] != ""){
+                                            echo $_SESSION['username'];
+                                            } ?></p>
     </div>
         
     <div class="nav_user-info">
@@ -27,14 +29,3 @@
     </div>
 </div>
 
-<?php
-    if(isset($data['msg'])){
-        if($data['msg'] == 'login_success'){
-            ?>
-                <div class="msg_login success">
-                    <p>Đăng nhập thành công</p>
-                </div>
-            <?php
-        }
-    }
-?>

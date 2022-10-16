@@ -6,19 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" href="<?php echo _WEB_ROOT;?>/public/css/datvemb.css">
     <link rel="stylesheet" href="<?php echo _WEB_ROOT;?>/public/css/main.css">
     
     <title>Trang chủ</title>
 </head>
 <body>
+    
     <!-- header -->
     <?php include_once './mvc/views/user/header.php';?>
     
-    <!-- Login -->  
-    <?php include_once './mvc/views/user/login.php';?>
-
+    <!-- Login -->
+ 
+    <?php
+        if(!isset($_SESSION['user_id'])){
+            include_once './mvc/views/user/login.php';
+            include_once './mvc/views/user/signup.php';
+        }
+        ?>
     <!-- Sign up -->      
-    <?php include_once './mvc/views/user/signup.php';?>
+    
 
     <!-- Content -->
     <?php include_once './mvc/views/user/'.$data['page'].'.php'; ?>
@@ -31,6 +38,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <script src="<?php echo _WEB_ROOT;?>/public/js/main.js"></script>
+    <script src="<?php echo _WEB_ROOT;?>/public/js/datvemb.js"></script>
 
     
 </body>

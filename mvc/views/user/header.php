@@ -3,7 +3,7 @@
             <div class="">
                 <a href="#" class="text_logo">8.tour</a>
             </div>    
-            <?php if(isset($data['success'])){
+            <?php if(isset($_SESSION['user_id'])){  
                 include_once './mvc/views/user/xuliLogin_view/login_success.php';// hiển thị user
             }else{
                 include_once './mvc/views/user/xuliLogin_view/gr_btn.php'; //hiển thị nút đăng nhập, đăng kí

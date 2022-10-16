@@ -49,53 +49,7 @@
         background-color: rgb(239, 187, 187);
     }
     
-    .msg {
-        position: absolute;
-        left: 50%;
-        width: 100%;
-        text-align: center;
-        transform: translateX(-50%);
-        font-size: 16px;
-        font-weight: 700;
-        padding: 10px;
-        z-index: -1;
-        opacity: 0;
-        animation: msg_load 5s linear;
-    }
-
-    @keyframes msg_load {
-        0%,100%{
-            opacity: 0;
-        }
-        10%,80%{
-            top:-50px;
-            opacity: 1;
-        }
-    }
-
-    .msg_login {
-        position: absolute;
-        top: 110%;
-        right: 0;
-        padding: 20px;
-        font-size: 16px;
-        font-weight: 700;
-        transform: translateX(100%);
-        border-top-left-radius: 10px;
-        border-bottom-left-radius: 10px;
-        animation: msglogin_load 4s linear;
-        opacity: 0.5;
-    }
-    @keyframes msglogin_load {
-        0%,100%{
-            opacity: 0.5;
-            transform: translateX(100%);
-        }
-        5%,80%{
-            opacity: 1;
-            transform: translateX(0);
-        }
-    }
+   
 
     h3 {
         font-size: 3.2rem;
@@ -143,10 +97,6 @@
         transition: background 0.25s linear;
         z-index: 99;
         border-bottom: 1px solid #ccc;
-    }
-    
-    header:hover {
-    
     }
     
     .head_menu {
@@ -1073,6 +1023,7 @@
     /* contact */
     footer {
         width: 100%;
+        margin-top: 50px;
     }
     .contact {
         display: flex;

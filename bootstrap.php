@@ -11,5 +11,7 @@
     $web_root = $web_root.$folder;
 
     define('_WEB_ROOT',$web_root);
+
+    
     include "./mvc/bridge.php";
 ?>

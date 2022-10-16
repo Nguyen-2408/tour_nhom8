@@ -3,7 +3,13 @@
       
         function check_user($username,$password) {
                 $sql = "SELECT * FROM user WHERE username ='$username' AND password = '$password'";
-                return mysqli_query($this->conn, $sql);
+                $kq = mysqli_query($this->conn, $sql);
+                return $kq;
         }
+        function getAll_user($username,$password) {
+            $sql = "SELECT * FROM user";
+            $kq = mysqli_query($this->conn, $sql);
+            return $kq;
+    }
     }
 ?>
