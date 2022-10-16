@@ -1,38 +1,72 @@
 <?php
 class app {
-    protected $controller = "Home";
-    protected $action = "Getdata";
-    protected $params = [];
-
-
+    protected $controller;
+    protected $action;
+    protected $params;
+  
     //Controller
     function __construct() {
-        $arr = $this->Urlprocess();
-        if($arr != null) { 
-            if(file_exists('./mvc/controllers/'.$arr[0].'.php')){
-                $this->controller=$arr[0];
-                unset($arr[0]);
-            }      
+        $this->controller = 'home';
+        $this->action = 'index';
+        $this->params = [];
+
+        $this->Urlprocess();
+    }
+
+    function getUrl() {
+        if(isset($_GET['url'])) {
+            $url = $_GET['url'];
+        } else {
+            $url = '/';
+        }
+        return $url;
+    }
+    
+    public function Urlprocess() {
+        $url =$this->getUrl();
+        /* $urlArr =  explode("/", filter_var(trim($url, "/")));*/
+        $urlArr =  array_filter(explode('/',$url));
+        $urlArr = array_values($urlArr);
+
+        //Xử lí controller
+        if(isset($urlArr[0])) {
+            $this->controller = ucfirst($urlArr[0]);
+        }else{
+            $this->controller = ucfirst($this->controller);
         }
 
-        require_once './mvc/controllers/'.$this->controller.'.php';
-        $this->controller = new $this->controller;
-
-    //Action
-        if(isset($arr[1])) {
-            if(method_exists($this->controller, $arr[1])) {
-                $this->action = $arr[1];
+        if(file_exists('./mvc/controllers/'.$this->controller.'.php')) {
+            require_once './mvc/controllers/'.$this->controller.'.php';
+            if(class_exists($this->controller)) {
+                $this->controller = new $this->controller;
+            }else {
+                $this->loadError();
             }
-            unset($arr[1]);
+            unset($urlArr[0]);
+        }else{
+            $this->loadError();
         }
-    //Param
-        $this->params =$arr?array_values($arr):[];
-        call_user_func_array([$this->controller, $this->action], $this->params); // truyền 2 đối số 
-    }
-    function Urlprocess() {
-        if(isset($_GET["url"])){
-            return explode("/", filter_var(trim($_GET["url"], "/")));  
+        //Xử lí action
+        if(isset($urlArr[1])) {
+            $this->action = $urlArr[1];
+            unset($urlArr[1]);
         }
+
+        //Xử lí param
+        $this->params = array_values($urlArr);
+
+        if(method_exists($this->controller, $this->action)){
+            call_user_func_array([$this->controller, $this->action], $this->params);
+        }else {
+            $this->loadError();
+        }
+
     }
+
+    function loadError($name = '404') {
+        require_once './mvc/errors/'.$name.'.php';
+    }
+        
 }
+
 ?>

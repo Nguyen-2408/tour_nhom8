@@ -1,6 +1,10 @@
 
-let tabs = document.querySelectorAll(".menu_info-item")
+window.addEventListener("onload",()=>{
+    this.classList.add('loadPage');
+})
 
+
+let tabs = document.querySelectorAll(".menu_info-item")
 
 tabs.forEach(tab => {
     tab.addEventListener("click", () => {
@@ -37,8 +41,6 @@ const eyeOpenSignUp = document.querySelector(".signup__eye-open");
 const eyeCloseSignUp = document.querySelector(".signup__eye-close");
 const eyeOpenSignUp1 = document.querySelector(".signup__eye-open1");
 const eyeCloseSignUp1 = document.querySelector(".signup__eye-close1");
-const linkSignUp = document.querySelector(".link__signup");
-const linkLogIn = document.querySelector(".link__login");
 
 
 eyeOpen.addEventListener("click", function() {
@@ -72,41 +74,4 @@ eyeCloseSignUp1.addEventListener("click", function(){
     eyeOpenSignUp1.classList.remove("hidden");
     pass_again.setAttribute("type", "text");
 });
-
-
-/* show/hide card */
-const openCardLogin = document.querySelector(".btn_login");
-const closeCardLogin = document.querySelector(".login__exit");
-const cardLogin = document.querySelector(".card__login-event");
-const openCardSignUp = document.querySelector(".btn_signup");
-const closeCardSignUp = document.querySelector(".signup__exit");
-const cardSignup = document.querySelector(".card__signup-event");
-
-openCardLogin.addEventListener("click", function(){
-    cardLogin.classList.remove("hidden");
-});
-
-closeCardLogin.addEventListener("click", function(){
-    cardLogin.classList.add("hidden");
-});
-openCardSignUp.addEventListener("click", function(){
-    cardSignup.classList.remove("hidden");
-});
-
-closeCardSignUp.addEventListener("click", function(){
-    cardSignup.classList.add("hidden");
-});
-
-linkSignUp.addEventListener("click", function() {
-    cardSignup.classList.remove("hidden");
-    cardLogin.classList.add("hidden");
-});
-
-linkLogIn.addEventListener("click", function() {
-    cardSignup.classList.add("hidden");
-    cardLogin.classList.remove("hidden");
-})
-
-
- 
 

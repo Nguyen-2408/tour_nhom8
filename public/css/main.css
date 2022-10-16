@@ -10,7 +10,7 @@
     }
     
     ::-webkit-scrollbar {
-        width: 8px;
+        width: 10px;
       }
     
     ::-webkit-scrollbar-track {
@@ -38,7 +38,65 @@
         background-color: rgb(163, 163, 163);
         margin: 3rem 0;
     }
+
+    .success {
+        color: green;
+        background-color: rgb(209, 241, 209);
+    }
+
+    .error {
+        color: red;
+        background-color: rgb(239, 187, 187);
+    }
     
+    .msg {
+        position: absolute;
+        left: 50%;
+        width: 100%;
+        text-align: center;
+        transform: translateX(-50%);
+        font-size: 16px;
+        font-weight: 700;
+        padding: 10px;
+        z-index: -1;
+        opacity: 0;
+        animation: msg_load 5s linear;
+    }
+
+    @keyframes msg_load {
+        0%,100%{
+            opacity: 0;
+        }
+        10%,80%{
+            top:-50px;
+            opacity: 1;
+        }
+    }
+
+    .msg_login {
+        position: absolute;
+        top: 110%;
+        right: 0;
+        padding: 20px;
+        font-size: 16px;
+        font-weight: 700;
+        transform: translateX(100%);
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        animation: msglogin_load 4s linear;
+        opacity: 0.5;
+    }
+    @keyframes msglogin_load {
+        0%,100%{
+            opacity: 0.5;
+            transform: translateX(100%);
+        }
+        5%,80%{
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
     h3 {
         font-size: 3.2rem;
         font-weight: 700;
@@ -71,9 +129,6 @@
         margin:3rem 0;
     }
     
-    .hidden {
-        display: none;
-    }
     
     #discount {
         transform: translateY(-15rem);
@@ -220,6 +275,10 @@
 
 
     /* login - sign up */
+    .hidden {
+        display: none;
+    }
+    
     .overlay__card-login {
         z-index: 99;
         width: 100%;
@@ -244,16 +303,18 @@
     }
     
     .login__exit {
-        cursor: pointer;
         margin: 1.5rem;
         font-size: 2rem;
-        color: #1a202c;
         position: absolute;
         right: 0;
         top: 0;
     }
+
+    .login__exit a {
+        color: #000;
+    }
     
-    .login__exit:hover {
+    .login__exit a:hover{
         color:#FF3366;
     }
     
@@ -364,16 +425,18 @@
     }
     
     .signup__exit {
-        cursor: pointer;
         margin: 1.5rem;
         font-size: 2rem;
-        color:rgb(46, 46, 46);
         position: absolute;
         right: 0;
         top: 0;
     }
+
+    .signup__exit a {
+        color: #000;
+    }
     
-    .signup__exit:hover {
+    .signup__exit a:hover {
         color:#FF3366;
     }
     
@@ -451,7 +514,105 @@
         font-size: 1.2rem;
        
     }
+    .wrap_user_info{
+        position: relative;
+    }
     
+    .user_info {
+        position: relative;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        top:20px;
+    }
+    
+    .user_image {
+        width: 40px;
+        height:40px;
+        border: 2px solid #afafaf;
+        border-radius: 50%;
+    }
+    
+    .user_name {
+        font-size: 1.4rem;
+        font-weight: 600;
+        cursor:default;
+        margin-left: 10px;
+    }
+    
+    .wrap_user-info:hover .nav_user-list {
+        display: block;
+    }
+    
+    .nav_user-info {
+        line-height: 2;
+        position: absolute;
+        top:0;
+        right:0;
+        transform: translate(-60%,40%);
+        border:1px solid #ccc;
+        border-radius: 10px;
+        background-color: #fff;
+    }
+    
+    .nav_user-list {
+        display: none;
+        list-style-type: none;
+    }
+    
+    .nav_user-list::before {
+        content: "";
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 20px;
+        transform: translateY(-100%);
+    }
+    
+    .nav_user-item {
+        padding:5px 20px;
+        cursor: pointer;
+        transition: 0.25s linear;
+    }
+    
+    .nav_user-item:first-child {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .nav_user-item:last-child {
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+    
+    }
+    
+    .nav_user-item:hover {
+        background-color: #ccc;
+    }
+    
+    .nav_user-link {
+        text-decoration: none;
+        color: #000;
+        font-size: 1.2rem;
+        font-weight: 600;
+        padding: 1rem 2rem;
+    }
+    
+    .cart_amount {
+        position: absolute;
+        top:0;
+        right:0;
+        width: 50px;
+        height: 50px;
+        color: #2cccff;
+        font-size: 20px;
+        line-height: 50px;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        transform: translate(-100%,30%);
+    }
     
     
     /*  */
@@ -910,6 +1071,9 @@
         font-size: 1.4rem;
     }
     /* contact */
+    footer {
+        width: 100%;
+    }
     .contact {
         display: flex;
         width: 100%;
