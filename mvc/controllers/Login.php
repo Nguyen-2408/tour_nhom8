@@ -24,6 +24,7 @@
                 if(mysqli_num_rows($kq) > 0) {
                     $row = mysqli_fetch_assoc($kq);
                     $_SESSION['msg'] = 'Đăng nhập thành công';
+                    $_SESSION['type_msg'] = 'success';
                     $_SESSION['user_id'] = $row['id'];                      
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['avatar'] = $row['avatar'];
@@ -31,6 +32,7 @@
                     header('location:'._WEB_ROOT.'/');
                 }else {      
                     $_SESSION['msg'] = 'Tài khoản hoặc mật khẩu không chính xác';
+                    $_SESSION['type_msg'] = 'error';
                 }
             }
         }

@@ -16,6 +16,13 @@
     <!-- header -->
     <?php include_once './mvc/views/user/header.php';?>
     
+    <?php if(isset($_SESSION['msg'])){
+        echo '<div class="msg '.$_SESSION['type_msg'].'">
+                <p>'.$_SESSION['msg'].'</p>
+            </div>';
+        } 
+        unset($_SESSION['msg']);
+        ?>
     <!-- Login -->
  
     <?php

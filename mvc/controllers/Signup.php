@@ -26,20 +26,26 @@
                     $row = mysqli_fetch_assoc($kq);
                     if($username == $row['username']){
                         $_SESSION['msg'] = 'Tên tài khoản đã được dùng';
+                        $_SESSION['type_msg'] = 'warn';
                     } else if($email == $row['email']){ 
                         $_SESSION['msg'] = 'Email đã được dùng';
+                        $_SESSION['type_msg'] = 'warn';
                     }
                 }else {
-                    if(strlen($username) < 5 || strlen($username) > 18) {
-                        $_SESSION['msg'] = 'TK chỉ từ 5 đến 18 kí tự';
-                    } else if(strlen($password) < 6){
-                        $_SESSION['msg'] = 'Mk phải từ 6 kí tự';
+                    if(strlen($username) < 3 || strlen($username) > 18) {
+                        $_SESSION['msg'] = 'Tên tài khoản chỉ từ 3 đến 18 kí tự';
+                        $_SESSION['type_msg'] = 'warn';
+                    } else if(strlen($password) < 3){
+                        $_SESSION['msg'] = 'Mật khẩu phải từ 3 kí tự';
+                        $_SESSION['type_msg'] = 'warn';
                     } else if($password != $cpassword){
                         $_SESSION['msg'] = 'Pass not match';
+                        $_SESSION['type_msg'] = 'warn';
                     }
                     else{
                         $add_user = $this->user->add_user($username, $email,$password);
                         $_SESSION['msg'] = 'Đăng kí thành công';
+                        $_SESSION['type_msg'] = 'success';
                         $this-> view('MasterLayout', [
                             'page' => 'trang_chu',
                             'showLogin' => ''
