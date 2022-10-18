@@ -1,28 +1,28 @@
 
-.tour_ticket-in {
+.khachsan_ticket-in {
     position: absolute;
     top:8rem;
     width: 100%;
     padding: 3rem;
 }
 
-.tour_name {
+.khachsan_name {
     font-size: 1.4rem;
     font-weight: 600;
     margin-left: 4rem;
 }
 
-.wrap_form_tour-in {
+.wrap_form_khachsan-in {
     margin: 2rem 0 2rem 4rem;
 }
 
-.wrap_form_tour-in p {
+.wrap_form_khachsan-in p {
     font-size: 16px;
     font-weight: 600;
     padding-bottom: 3rem;
 }
 
-.form_tour-in {
+.form_khachsan-in {
     border: 1px solid #ccc;
     padding: 2rem 4rem;
     border-radius: 10px;
@@ -30,7 +30,7 @@
 }
 
 
-.form_tour-in .input {
+.form_khachsan-in .input {
     padding: 1rem 3rem;
     margin: 2rem;
     outline: none;
@@ -44,7 +44,7 @@
     position: relative;
 }
 
-.tour_name-customer {
+.khachsan_name-customer {
     width: 400px;
 }
 
@@ -93,32 +93,32 @@
     background-color: rgb(92, 214, 102);
 }
 
-.tbl_tour-ticket th {
+.tbl_khachsan-ticket th {
     font-size: 16px;
     padding: 1rem;
 }
 
 
 
-.tbl_tour-ticket tr, 
-.tbl_tour-ticket td{
+.tbl_khachsan-ticket tr, 
+.tbl_khachsan-ticket td{
     border: 1px solid #ccc;
 }
 
-.tbl_tour-ticket th:first-child{
+.tbl_khachsan-ticket th:first-child{
     text-align: left;
 }
 
-.tbl_tour-ticket th:last-child {
+.tbl_khachsan-ticket th:last-child {
     text-align: center;
     width: 50px;
 }
-.tbl_tour-ticket td:first-child {
+.tbl_khachsan-ticket td:first-child {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
 }
 
-.tbl_tour-ticket td:last-child {
+.tbl_khachsan-ticket td:last-child {
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
 }
