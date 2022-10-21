@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="<?php echo _WEB_ROOT;?>/public/css/datvemb.css">
     <link rel="stylesheet" href="<?php echo _WEB_ROOT;?>/public/css/dstour.css">
     <link rel="stylesheet" href="<?php echo _WEB_ROOT;?>/public/css/main.css">
+    <link rel="stylesheet" href="<?php echo _WEB_ROOT;?>/public/css/dat_tour.css">
+    <link rel="stylesheet" href="<?php echo _WEB_ROOT;?>/public/css/datkhachsan.css">
+    <link rel="stylesheet" href="<?php echo _WEB_ROOT;?>/public/css/gioithieu.css">
     
     <title>Trang chủ</title>
 </head>
