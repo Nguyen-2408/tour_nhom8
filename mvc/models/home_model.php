@@ -1,10 +1,12 @@
 <?php
     class home_model extends connectDB{
         
-        function user_exist($id) {
-            $sql = "SELECT * FROM user WHERE id ='$id'";
+        function qltkAll() {
+            $sql = "SELECT * FROM user";
             return mysqli_query($this->conn, $sql);
         }
+
+       
     }
 
 ?>

@@ -18,11 +18,11 @@
     }
     
     ::-webkit-scrollbar-thumb {
-        background: rgb(146, 213, 241);
+        background: rgb(116, 126, 131);
     }
     
     ::-webkit-scrollbar-thumb:hover {
-        background: rgb(73, 186, 230);
+        background: #2cccff;
     }
     
     html {
@@ -39,15 +39,63 @@
         margin: 3rem 0;
     }
 
-    .msg {
+    .msg_home {
         position: absolute;
-        top: 50%;
-        left: 50%;
-        padding: 30px;
+        top: 80px;
+        right: 0;
+        padding: 10px;
+        width: 200px;
         z-index: 1000;
-        font-size: 16px;
-        
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        transform: translateX(100%);
+        opacity: 0;
+        animation: msg-home 4s ease-out;
     }
+
+    @keyframes msg-home {
+        0%,100%{
+            transform: translateX(100%);
+            opacity: 0;
+        }
+        5%, 80%{
+            transform: translateX(0);
+            opacity: 1;
+        }
+    }
+
+    .msg_log {
+        position: absolute;
+        top: -15%;
+        left: 50%;
+        padding: 10px;
+        width: 100%;
+        z-index: 1000;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        transform: translateX(-50%);
+        opacity: 0;
+        animation: msg 4s ease-out;
+    }
+
+    @keyframes msg {
+        10%{
+            top: -10%;
+            opacity: 1;
+        }
+        80%{
+            top: -10%;
+            opacity: 1;
+        }
+        100%{
+            top: -10%;
+            opacity: 0;
+        }
+    }
+
+
 
     .success {
         color: green;
@@ -56,14 +104,8 @@
 
     .error {
         color: red;
-        background-color: rgb(239, 187, 187);
-    }
-    
-    .warn {
-        color: yellow;
-        background-color: rgb(231, 231, 186);
-    }
-   
+        background-color: rgb(236, 190, 190);
+    } 
 
     h3 {
         font-size: 3.2rem;
@@ -78,12 +120,11 @@
         font-weight: 700;
         left: 0;
         top: 2rem;
-        background-color: #ed5b5b;
-        color:rgb(255, 255, 255);
+        background-color: rgba(204, 204, 204, 0.5);
+        color:rgb(228, 0, 0);
         padding:5px 3rem 5px 3rem;
         border-top-right-radius:5px;
-        border-bottom-right-radius:5px;
-        box-shadow: 0 7px 11px #da272770; 
+        border-bottom-right-radius:5px; 
     }
     
     h5 {
@@ -173,6 +214,9 @@
         line-height: 25px;
         position: relative;
         cursor: pointer;  
+        font-size: 16px;
+        font-weight: 700;
+        color: rgb(83, 83, 83);
     }
     .list_item::before  {
         content:'';
@@ -189,7 +233,7 @@
         height:3px;
         width:100%;
     }
-    .list_item:hover .menu_link{
+    .menu_link:hover {
         color: #000;
     }
     
@@ -663,25 +707,13 @@
     
     }
     
-    .input_khoihanh {
-        width: 25rem;
-    }
-    
     .input_diemden {
-        width: 25rem;
-    }
-    
-    .input_ngaydi {
-        width: 13rem;
-    }
-    
-    .input_ngayve {
-        width: 13rem;
+        width: 100%;
     }
     
     .btn-search-tour {
         width: 50px;
-        height: 50px;
+        transform: translateX(100%);
         border-radius: 50%;
         background-color: #333;
         text-align: center;
@@ -716,7 +748,7 @@
     
     }
     
-    [type="date"] {
+    /* [type="date"] {
         background: url(https://icons.iconarchive.com/icons/paomedia/small-n-flat/1024/calendar-icon.png) 100% no-repeat ;
         background-size: contain;
         cursor: pointer;
@@ -727,7 +759,7 @@
         font-size: 2.5rem;
         cursor: pointer;
     }
-    
+     */
     /* GIOITHIEU */
     
     .form_gioithieu {
@@ -843,7 +875,7 @@
     .img_tour:hover .tour_detail{
         transform: translate(-50%,-50%);
         opacity: 1;
-    
+        
     }
     
     .heart_link {
@@ -861,13 +893,19 @@
     }
     
     .tour_detail {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        line-height: 100%;
+        align-items: center;
+        justify-content: center;
         position: absolute;
-        top:50%;
-        left:50%;
+        top: 50%;
+        left: 50%;
         transform: translate(-50%,calc(-50% + 24rem));
         font-size: 2rem;
         text-decoration: none;
-        color:rgb(0, 0, 0);
+        color: rgb(0, 0, 0);
         font-weight: 800;
         opacity: 0;
         transition: 0.5s ease-out;
@@ -878,16 +916,17 @@
     }
     
     .btn_vall {
-        padding: 5px 20px 5px 20px;
+        padding: 10px 20px 10px 20px;
         border-radius: 5px;
-        font-size: 14px;
-        font-weight: 700;
-        border: 1px solid rgb(117, 117, 117);
-        margin-bottom:5rem;
+        font-size: 16px;
+        font-weight: 600;
+        font-family: 'Inter';
+        border: 1px solid #ccc;
+        margin-bottom: 5rem;
         cursor: pointer;
     }
     .btn_vall:hover {
-        background-color: #2cccff;
+        background-color: #73dcff;
     }
     
     

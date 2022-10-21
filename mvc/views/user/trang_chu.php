@@ -8,30 +8,21 @@
         </div>
         <!-- form search tour -->
         <div>
-            <form action="">
+            <form action="<?php echo _WEB_ROOT;?>/danhsachtour/tim_kiem_tour" method = "POST">
                 <div class="wrap_tb-tour">
                     <table class="tb-tour">
                         <tr>
-                            <th>Địa điểm khởi hành</th>
-                            <th>Điểm đến</th>
-                            <th>Ngày đi</th>
-                            <th>Ngày về</th>
+                            <th>Tìm kiếm điểm du lịch</th>
                         </tr>
                         <tr>
-                            <td><input type="text" placeholder="Nhập vị trí" class="input-search input_khoihanh"></td>
-                            <td><input type="text" placeholder="Nơi muốn đến" class="input-search input_diemden"></td>
-                            <td>
-                                <input type="date" class="input-search input_ngaydi">
-                            </td>
-                            <td>
-                                <input type="date" class="input-search input_ngayve"> 
-                            </td>
-                            <td rowspan="2">
-                                <a href="">
-                                    <div class="btn-search-tour">
-                                        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
-                                    </div>
-                                </a>
+                            <td><input type="text" placeholder="Nhập điểm du lịch muốn đến" name ="txt_search_tour" class="input-search input_diemden" required></td>
+                            <td > 
+                                <div class="btn-search-tour">
+                                <label for="search_tour" style="cursor: pointer;padding: 13px">
+                                    <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                                </label>
+                            </div>
+                                <input type="submit" name="btn_tim_kiem_tour" id="search_tour" value="" hidden>
                             </td>
                         </tr> 
                     </table>
@@ -66,111 +57,64 @@
       <div class="tour_trongnuoc">
             <h3>Điểm đến yêu thích trong nước</h3>
             <div class="wrap_img-tour">
-                <div class="img_tour">
-                    <h4>Đà Lạt</h4>
-                    <div>
-                        <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a>
-                    </div>
-                    <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
-                        <a href="" class="tour_detail">Xem chi tiết</a>
+                <?php 
+               
+                if(isset($data['dd_trongnuoc'])) {
+                    $count = 0;
+                    while($row  = mysqli_fetch_assoc($data['dd_trongnuoc'])){
+                        $_SESSION['id_diadiem'] = $row['id'];
+                        if($count < 4){
+                            ?>
+                            <div class="img_tour">
+                                <h4><?php echo $row['tendiadiem'] ?></h4>
+                                <div>
+                                <!-- <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a> -->
+                            </div>
+                            <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
+                            <a href="<?php echo _WEB_ROOT;?>/danhsachtour/get_tour/<?php echo $_SESSION['id_diadiem'] ?>" class="tour_detail">Xem chi tiết</a>
+                            </div>
+                            <?php
+                        $count++;
+                        }
+                    }
                     
-                </div>
-                <div class="img_tour">
-                    <h4>Sapa</h4>
-                    <div>
-                        <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a>
-                    </div>
-                    <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
-                        <a href="" class="tour_detail">Xem chi tiết</a>
-                    
-                </div>
-                <div class="img_tour">
-                    <h4>Phú Quốc</h4>
-                    <div>
-                        <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a>
-                    </div>
-                    <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
-                        <a href="" class="tour_detail">Xem chi tiết</a>
-                    
-                </div>
-                <div class="img_tour">
-                    <h4>Nha Trang</h4>
-                    <div>
-                        <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a>
-                    </div>
-                    <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
-                        <a href="" class="tour_detail">Xem chi tiết</a>
-                    
-                </div>
-                <div class="img_tour">
-                    <h4>Đà Nẵng</h4>
-                    <div>
-                        <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a>
-                    </div>
-                    <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
-                        <a href="" class="tour_detail">Xem chi tiết</a>
-                    
-                </div>
-                <div class="img_tour">
-                    <h4>Vũng tàu</h4>
-                    <div>
-                        <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a>
-                    </div>
-                    <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
-                        <a href="" class="tour_detail">Xem chi tiết</a>
-                    
-                </div>  
+                }
+                
+                ?>
             </div>
         </div> 
                 <div class="wrap-btn">
-                    <button type="button" class="btn_vall">Xem tất cả</button>
+                <a href="<?php echo _WEB_ROOT;?>/danhsachtour"><button type="button" class="btn_vall">Xem tất cả</button></a>
                 </div> 
 <!-- tour nước ngoài -->
-             <div class="tour_nước ngoài">
+             <div class="tour_nuocngoai">
                 <h3>Điểm đến yêu thích nước ngoài</h3>
                 <div class="wrap_img-tour">
-                    <div class="img_tour">
-                        <h4>Singapore</h4>
-                        <div>
-                            <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a>
-                        </div>
-                        <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
-                            <a href="" class="tour_detail">Xem chi tiết</a>
-                        
-                    </div>
-                    <div class="img_tour">
-                        <h4>Hàn Quốc</h4>
-                        <div>
-                            <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a>
-                        </div>
-                        <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
-                            <a href="" class="tour_detail">Xem chi tiết</a>
-                        
-                    </div>
-                    <div class="img_tour">
-                        <h4>Dubai</h4>
-                        <div>
-                            <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a>
-                        </div>
-                        <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
-                            <a href="" class="tour_detail">Xem chi tiết</a>
-                        
-                    </div>
-                    <div class="img_tour">
-                        <h4>Nhật Bản</h4>
-                        <div>
-                            <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a>
-                        </div>
-                        <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
-                            <a href="" class="tour_detail">Xem chi tiết</a>
-                        
-                    </div>
-                    
-                        
+                <?php 
+                if(isset($data['dd_nuocngoai'])) {
+                    $count = 0;
+                    while($row  = mysqli_fetch_assoc($data['dd_nuocngoai'])){
+                        $_SESSION['id_diadiem'] = $row['id'];
+                        if($count < 4){
+                        ?>
+                         <div class="img_tour">
+                            <h4><?php echo $row['tendiadiem'] ?></h4>
+                            <div>
+                                <!-- <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a> -->
+                            </div>
+                            <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
+                            <a href="<?php echo _WEB_ROOT;?>/danhsachtour/get_tour/<?php echo $_SESSION['id_diadiem'] ?>" class="tour_detail">Xem chi tiết</a>
+                            </div>
+                        <?php
+                    }
+                    $count++;
+                }
+                }
+                ?>      
                 </div>
             </div>
                 <div class="wrap-btn">
-                    <button type="button" class="btn_vall">Xem tất cả</button>
+                    <a href="<?php echo _WEB_ROOT;?>/danhsachtour"><button type="button" class="btn_vall">Xem tất cả</button></a>
                 </div>
             </main>
             <div id="discount"></div>

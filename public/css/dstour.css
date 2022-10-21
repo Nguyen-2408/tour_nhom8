@@ -1,0 +1,227 @@
+
+.wrap_tb-dstour {
+    background-color: rgb(152, 152, 152);
+    width: 1024px;
+    max-width: 80%;
+    height: 130px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0,80px);
+    border-radius: 10px;
+    background: rgba(217, 217, 217, 0.3);
+}
+
+.wrap_tb-dstour::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(217, 217, 217, 0.3);
+    border-radius: 1rem;
+    transition: 0.25s linear;
+}
+
+.wrap_tb-dstour:hover::before{
+    filter: blur(5px);
+}
+.tb-dstour {
+    width: 100rem;
+    text-align: left;
+    font-size: 1.4rem;
+    background-color: rgb(255, 255, 255);
+    height:11rem;
+    border-radius: 1rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 1rem;
+}
+
+
+.tb-dstour td {
+    height:4rem;
+    
+}
+.input-search {
+    height:4rem;
+    padding-left: 1rem;
+    outline: none;
+    border-radius: 1rem;
+    background: #EBEBEB;
+    border: 1px solid #C0C0C0;
+    margin-bottom: 2rem;
+    margin-right: 3.5rem;
+    transition: 0.25s linear;
+}
+
+.input-search:focus {
+    background-color: #fff;
+
+}
+
+.input_diemden {
+    width: 100%;
+}
+
+
+.btn-search-dstour {
+    width: 50px;
+    transform: translateX(100%);
+    border-radius: 50%;
+    background-color: #333;
+    text-align: center;
+    line-height: 50px;
+    font-size: 24px;
+    color:#fff;
+}
+
+.btn-search-dstour:hover .fa-magnifying-glass {
+    animation: search-icon 0.5s ease-out;
+
+}
+
+
+@keyframes search-icon {
+    0%,100%{
+        transform: rotate(0);
+    }
+    20% {
+        transform: rotate(10deg);
+    }
+    40% {
+        transform: rotate(-10deg);
+    }
+    60%{
+        transform: rotate(5deg);
+    }
+    80%{
+        transform: rotate(-5deg);
+    }
+
+
+}
+
+[type="date"] {
+    background: url(./calendar_icon.png) 100% no-repeat ;
+    background-size: contain;
+    cursor: pointer;
+}
+
+[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+
+.dstour{
+    padding-top: 260px;
+    display: flex;
+    width: 100%;
+}
+.menu_tour {
+    margin-left: 30px;
+    width: 20%;
+}
+.menu_tour_sub{
+    border: 1px solid #ccc;
+    padding-top: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+.menu_tour_sub p {
+    font-size: 18px;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.dd_tour-list {
+    list-style-type: none;
+    
+}
+
+.dd_tour-link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000;
+}
+.dd_tour-link li {
+    height: 40px;
+    display: flex;
+    padding-left: 50px;
+    align-items: center;
+    width: 100%;
+}
+
+.dd_tour-link:hover li{
+    background-color: #eee;
+}
+.tour_list {
+    position: relative;
+    width: 80%;
+    padding-left: 40px;
+    padding-right: 10px;
+}
+
+.txt_search{
+    position: absolute;
+    font-size: 18px;
+    top: -25px;
+}
+
+.tour_item-link {
+    text-decoration: none;
+    color: #000;
+}
+.tour_item-link:hover .tour_item{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.tour_item{
+    width: 100%;
+    display: flex;
+    background-color: #fff;
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 20px;
+    transition: 0.1s linear;
+}
+
+
+.wrap_img_tour_item {
+    height: 200px;
+    width: 300px;
+    object-fit: contain;
+}
+
+.img_tour_item{
+    border-radius: 20px;
+    object-fit: cover;
+    padding: 10px;
+    max-width: 260px;
+    height: 200px;
+    transition: 0.25s linear;
+}
+
+.tour_item-link:hover .tour_name {
+    color: #27a9d4;
+}
+.tour_name{
+    font-size: 18px;
+    margin: 15px;
+    font-weight: 600;
+}
+.tour_date{
+    font-size: 14px;
+    font-weight: 600;
+    position: absolute;
+    right: 0;
+    top:10px;
+    transform: translateX(-50%);
+}

@@ -8,7 +8,7 @@
             if($_SESSION['avatar'] == '') {
                 echo '<img src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" alt="" class="user_image">';
             }else {
-                echo '<img src="'.(_WEB_ROOT.'/images/avatars/'.$avatar.'').'" alt="" class="user_image">';
+                echo '<img src="'._WEB_ROOT.'/images/avatars/'.$_SESSION['avatar'].'" alt="" class="user_image">';
             }
         }
     

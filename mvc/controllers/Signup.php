@@ -25,26 +25,26 @@
                 if(mysqli_num_rows($kq) > 0) {
                     $row = mysqli_fetch_assoc($kq);
                     if($username == $row['username']){
-                        $_SESSION['msg'] = 'Tên tài khoản đã được dùng';
-                        $_SESSION['type_msg'] = 'warn';
+                        $_SESSION['msg_signup'] = 'Tên tài khoản đã được dùng';
+                        $_SESSION['type_msg'] = 'error';
                     } else if($email == $row['email']){ 
-                        $_SESSION['msg'] = 'Email đã được dùng';
-                        $_SESSION['type_msg'] = 'warn';
+                        $_SESSION['msg_signup'] = 'Email đã được dùng';
+                        $_SESSION['type_msg'] = 'error';
                     }
                 }else {
                     if(strlen($username) < 3 || strlen($username) > 18) {
-                        $_SESSION['msg'] = 'Tên tài khoản chỉ từ 3 đến 18 kí tự';
-                        $_SESSION['type_msg'] = 'warn';
+                        $_SESSION['msg_signup'] = 'Tên tài khoản chỉ từ 3 đến 18 kí tự';
+                        $_SESSION['type_msg'] = 'error';
                     } else if(strlen($password) < 3){
-                        $_SESSION['msg'] = 'Mật khẩu phải từ 3 kí tự';
-                        $_SESSION['type_msg'] = 'warn';
+                        $_SESSION['msg_signup'] = 'Mật khẩu phải từ 3 kí tự';
+                        $_SESSION['type_msg'] = 'error';
                     } else if($password != $cpassword){
-                        $_SESSION['msg'] = 'Pass not match';
-                        $_SESSION['type_msg'] = 'warn';
+                        $_SESSION['msg_signup'] = 'Xác nhận mật khẩu không khớp';
+                        $_SESSION['type_msg'] = 'error';
                     }
                     else{
                         $add_user = $this->user->add_user($username, $email,$password);
-                        $_SESSION['msg'] = 'Đăng kí thành công';
+                        $_SESSION['msg_signup_success'] = 'Đăng kí thành công';
                         $_SESSION['type_msg'] = 'success';
                         $this-> view('MasterLayout', [
                             'page' => 'trang_chu',

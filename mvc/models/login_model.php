@@ -10,6 +10,8 @@
             $sql = "SELECT * FROM user";
             $kq = mysqli_query($this->conn, $sql);
             return $kq;
-    }
+        }
+
+        
     }
 ?>

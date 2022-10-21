@@ -5,7 +5,29 @@
                                         echo "hidden";
                                     } ?>">
         <div class="overlay__card-login">
+            <?php
+                if(isset($_SESSION['msg_vemaybay']) && isset($_SESSION['type_msg'])){
+                    echo '<div class="msg_home '.$_SESSION['type_msg'].'">
+                            <p>'.$_SESSION['msg_vemaybay'].'</p>
+                        </div>'; 
+                        unset($_SESSION['msg_vemaybay']);       
+                }
+            ?>
             <div class="login__card">
+            <?php if(isset($_SESSION['msg_login']) && isset($_SESSION['type_msg'])){
+                echo '<div class="msg_log '.$_SESSION['type_msg'].'">
+                        <p>'.$_SESSION['msg_login'].'</p>
+                    </div>';
+                    unset($_SESSION['msg_login']);
+                } 
+                if(isset($_SESSION['msg_signup_success']) && isset($_SESSION['type_msg']) && $_SESSION['type_msg'] == "success"){
+                    echo '<div class="msg_log '.$_SESSION['type_msg'].'">
+                        <p>'.$_SESSION['msg_signup_success'].'</p>
+                    </div>';
+                    unset($_SESSION['msg_signup_success']);
+                }   
+
+            ?>
                 <div class="login__exit">
                     <a href="<?php echo _WEB_ROOT;?>/"><i class="fa-solid fa-circle-xmark"></i></a>
                 </div>

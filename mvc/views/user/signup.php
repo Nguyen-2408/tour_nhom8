@@ -5,7 +5,14 @@
                                     }?>">
         <div class="overlay__card-signup">
             <div class="signup__card">
+            <?php if(isset($_SESSION['msg_signup']) && isset($_SESSION['type_msg'])){
+                echo '<div class="msg_log '.$_SESSION['type_msg'].'">
+                        <p>'.$_SESSION['msg_signup'].'</p>
+                    </div>';
                 
+                    unset($_SESSION['msg_signup']);
+                } 
+                ?>
                 <div class="signup__exit">
                     <a href="<?php echo _WEB_ROOT;?>/"><i class="fa-solid fa-circle-xmark"></i></a>
                 </div>
