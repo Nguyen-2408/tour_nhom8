@@ -5,7 +5,6 @@
             $sql = "SELECT * FROM user";
             return mysqli_query($this->conn, $sql);
         }
-
        
     }
 

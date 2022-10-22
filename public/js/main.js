@@ -1,8 +1,4 @@
 
-window.addEventListener("onload",()=>{
-    this.classList.add('loadPage');
-})
-
 
 let tabs = document.querySelectorAll(".menu_info-item")
 
@@ -13,7 +9,13 @@ tabs.forEach(tab => {
     })
 });
 
-
+let loadFile = (event) => {
+    let output = document.querySelector('.avatar');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = () => {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
 
 $(document).ready(function () {
     $(".slider_discount").slick({
