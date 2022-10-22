@@ -23,7 +23,7 @@
                 'page' => 'user_info/thong_tin_user'
             ]);
         }
-
+        
         function update_user() {
             $this->ud_user = $this->model('user_info_model');
             $this->user = $this->model('home_model');
@@ -32,7 +32,11 @@
                 $email = $_POST['ud_email'];
                 $sdt = $_POST['ud_sdt'];
                 $diachi = $_POST['ud_diachi'];
-                $fileanh_path = basename($_FILES['change_avatar']['name']);
+                if(isset($_SESSION['avatar'])){
+                    $fileanh_path = $_SESSION['avatar'];
+                }else {
+                    $fileanh_path = basename($_FILES['change_avatar']['name']);
+                }
                 $target_dir = './public/images/avatars/';
                 $target_file = $target_dir .$fileanh_path;
                 $target_tmpName = $_FILES["change_avatar"]["tmp_name"];
@@ -70,7 +74,6 @@
                 }
             }
         }
-    
 
         function logout() {
             session_destroy();
