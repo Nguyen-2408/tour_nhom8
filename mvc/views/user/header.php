@@ -14,7 +14,7 @@
         <div class="nav_menu">
             <ul class="list_menu">
                 <a href="<?php echo _WEB_ROOT;?>" class="menu_link"><li class="list_item">Trang chủ</li></a>
-                <a href="<?php echo _WEB_ROOT;?>" class="menu_link"><li class="list_item">Giới thiệu</li></a>
+                <a href="<?php echo _WEB_ROOT;?>/gioithieu" class="menu_link"><li class="list_item">Giới thiệu</li></a>
                 <a href="<?php echo _WEB_ROOT;?>/danhsachtour" class="menu_link"><li class="list_item">Tour</li></a>
                 <a href="<?php echo _WEB_ROOT;?>" class="menu_link"><li class="list_item">Khách sạn</li></a>
                 <li class="list_item">Phương tiện

@@ -47,7 +47,7 @@
                         Lướt qua trang web của chúng tôi để lấy cảm hứng với hành trình tham quan và liên hệ với chúng tôi để tạo hành trình của bạn!
                         </p>
                         <div class="wrap_btn-gioithieu">
-                            <button type="button" class="btn_gioithieu">Xem thêm</button>
+                            <a href="<?php echo _WEB_ROOT;?>/gioithieu"><button type="button" class="btn_gioithieu">Xem thêm</button></a>
                         </div>
                     </div>
                 </div>
@@ -62,7 +62,6 @@
                 if(isset($data['dd_trongnuoc'])) {
                     $count = 0;
                     while($row  = mysqli_fetch_assoc($data['dd_trongnuoc'])){
-                        $_SESSION['id_diadiem'] = $row['id'];
                         if($count < 4){
                             ?>
                             <div class="img_tour">
@@ -71,7 +70,7 @@
                                 <!-- <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a> -->
                             </div>
                             <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
-                            <a href="<?php echo _WEB_ROOT;?>/danhsachtour/get_tour/<?php echo $_SESSION['id_diadiem'] ?>" class="tour_detail">Xem chi tiết</a>
+                            <a href="<?php echo _WEB_ROOT;?>/danhsachtour/get_tour/<?php echo $row['id'] ?>" class="tour_detail">Xem chi tiết</a>
                             </div>
                             <?php
                         $count++;
@@ -94,7 +93,6 @@
                 if(isset($data['dd_nuocngoai'])) {
                     $count = 0;
                     while($row  = mysqli_fetch_assoc($data['dd_nuocngoai'])){
-                        $_SESSION['id_diadiem'] = $row['id'];
                         if($count < 4){
                         ?>
                          <div class="img_tour">
@@ -103,7 +101,7 @@
                                 <!-- <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a> -->
                             </div>
                             <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
-                            <a href="<?php echo _WEB_ROOT;?>/danhsachtour/get_tour/<?php echo $_SESSION['id_diadiem'] ?>" class="tour_detail">Xem chi tiết</a>
+                            <a href="<?php echo _WEB_ROOT;?>/danhsachtour/get_tour/<?php echo $row['id'] ?>" class="tour_detail">Xem chi tiết</a>
                             </div>
                         <?php
                     }

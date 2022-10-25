@@ -31,10 +31,11 @@
                     <ul class="dd_tour-list">
                         <?php
                             if(isset($data['dd_trongnuoc'])){
-                                while($row = mysqli_fetch_assoc($data['dd_trongnuoc'])){
-                                    $_SESSION['id_diadiem'] = $row['id']; 
+                                while($row = mysqli_fetch_assoc($data['dd_trongnuoc'])){ 
+                                    
                                     ?>
-                                        <a href="<?php echo _WEB_ROOT;?>/danhsachtour/get_tour/<?php echo $_SESSION['id_diadiem'] ?>" class="dd_tour-link"><li><?php echo $row['tendiadiem'] ?></li></a>
+                                        <a href="<?php echo _WEB_ROOT;?>/danhsachtour/get_tour/<?php echo $row['id'] ?>" class="dd_tour-link"><li><?php echo $row['tendiadiem'] ?></li>
+                                        </a>
                                     <?php
                                 }
                             }
@@ -49,9 +50,8 @@
                     <?php
                         if(isset($data['dd_nuocngoai'])){
                             while($row = mysqli_fetch_assoc($data['dd_nuocngoai'])){
-                                $_SESSION['id_diadiem'] = $row['id'];
                                 ?>
-                                    <a href="<?php echo _WEB_ROOT;?>/danhsachtour/get_tour/<?php echo $_SESSION['id_diadiem'] ?>" class="dd_tour-link"><li><?php echo $row['tendiadiem'] ?></li></a>
+                                    <a href="<?php echo _WEB_ROOT;?>/danhsachtour/get_tour/<?php echo $row['id'] ?>" class="dd_tour-link"><li><?php echo $row['tendiadiem'] ?></li></a>
                                 <?php
                             }
                         }

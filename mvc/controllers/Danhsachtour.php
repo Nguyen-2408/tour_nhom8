@@ -7,6 +7,7 @@
             $this->tour = $this->model('tourmodel');
         }
         function index(){
+            
             $dd_trongnuoc = $this->diadiem->get_dia_diem_trong_nuoc();
             $dd_nuocngoai = $this->diadiem->get_dia_diem_nuoc_ngoai();
             $tour_first = $this->tour->get_all_tour(1);
@@ -15,7 +16,6 @@
                 'dd_trongnuoc' => $dd_trongnuoc,
                 'dd_nuocngoai' => $dd_nuocngoai,
                 'tour_first'=>$tour_first
-
             ]);
         }
 
@@ -31,9 +31,7 @@
                         'dd_trongnuoc' => $dd_trongnuoc,
                         'dd_nuocngoai' => $dd_nuocngoai,
                         'alldiadiem' => $alldiadiem,
-                        'dstour' => $dstour
-                        
-                        ]);
+                        'dstour' => $dstour                        ]);
                     }
                 }
             }
