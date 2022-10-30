@@ -18,10 +18,6 @@
 </head>
 <body>
 
-<!-- Thông báo -->
-                
-
-
     <!-- header -->
     <?php include_once './mvc/views/user/header.php';?>
     <?php
@@ -30,14 +26,14 @@
                     <p>'.$_SESSION['msg_login'].'</p>
                 </div>';   
         }
-    ?>
+    ?>  
     <!-- Login -->
     <?php
         if(!isset($_SESSION['user_id'])){
             include_once './mvc/views/user/login.php';
             include_once './mvc/views/user/signup.php';
         }
-        ?>    
+        ?>  
     
 
     <!-- Content -->

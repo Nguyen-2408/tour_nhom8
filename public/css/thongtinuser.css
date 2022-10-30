@@ -71,7 +71,7 @@
 
 .content{
     background-color: rgb(227, 255, 255);
-    height: 45rem;
+    padding-bottom:30px;
 }
 
 .btn-form{

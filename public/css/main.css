@@ -32,6 +32,78 @@
         scroll-behavior: smooth;
     }
     
+    /* LOADING */
+
+    .loader.fade_out {
+        animation: fade 1s alternate;
+    }
+    
+    @keyframes fade {
+        to{
+            opacity: 0;
+        }
+    }
+    .loader {
+        z-index: 99999999;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+    }
+    
+    .wrap-loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        transform: translate(-50%,-50%);
+    }
+    
+    .wrap-loader span{
+        position: absolute;
+        top:0;
+        left:0;
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        animation: loader 2s linear infinite ;
+    }
+    
+    .wrap-loader span:nth-child(1){
+        background-color: rgb(220, 137, 237);
+       }
+    .wrap-loader span:nth-child(2){
+        animation-delay: 0.5s;
+        background-color: rgb(61, 219, 224);
+    }
+    .wrap-loader span:nth-child(3){
+        animation-delay: 1s;
+        background-color: rgb(231, 177, 119);
+    }
+    .wrap-loader span:nth-child(4){
+        animation-delay: 1.5s;
+        background-color: rgb(232, 141, 141);
+    }
+    
+    
+    @keyframes loader {
+        0%, 100%{
+            transform: translate(0) ;
+        }
+        25% {
+            transform: translateX(60px);
+        }
+        50% {
+            transform:translate(60px, 60px);
+        }
+        75% {
+            transform:translateY(60px);
+        }
+    }
+    
+    /*  */
+
     .line {
         width: 100%;
         height: 1px;
@@ -693,13 +765,14 @@
     }
     .input-search {
         height:4rem;
+        font-size: 16px;
         padding-left: 1rem;
         outline: none;
         border-radius: 1rem;
         background: #EBEBEB;
         border: 1px solid #C0C0C0;
         margin-bottom: 2rem;
-        margin-right: 3.5rem;
+        margin-right: 10.5rem;
         transition: 0.25s linear;
     }
     

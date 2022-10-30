@@ -75,7 +75,7 @@
                 if(isset($data['tour_first'])){
                     while($row = mysqli_fetch_assoc($data['tour_first'])){
                             ?>
-                    <a href="" class="tour_item-link">
+                    <a href="<?php echo _WEB_ROOT;?>/dattour/get_tour/<?php echo $row['id'] ?>" class="tour_item-link">
                         <div class="tour_item">
                             <div class= "wrap_img_tour_item">
                                 <img src="<?php echo _WEB_ROOT;?>/public/images/img_web/<?php echo $row['anhtour'];?>" alt="" class="img_tour_item">
@@ -92,7 +92,7 @@
                 if(isset($data['dstour'])) {
                     while($row = mysqli_fetch_assoc($data['dstour'])){
                             ?>
-                        <a href="" class="tour_item-link">
+                        <a href="<?php echo _WEB_ROOT;?>/dattour/get_tour/<?php echo $row['id'] ?>" class="tour_item-link">
                             <div class="tour_item">
                                 <div class= "wrap_img_tour_item">
                                     <img src="<?php echo _WEB_ROOT;?>/public/images/img_web/<?php echo $row['anhtour'];?>" alt="" class="img_tour_item">

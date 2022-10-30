@@ -1,5 +1,5 @@
 <?php
     session_start();
-    include "./bootstrap.php";
+    include "./bootstrap.php"; 
     $myapp = new app();
 ?>

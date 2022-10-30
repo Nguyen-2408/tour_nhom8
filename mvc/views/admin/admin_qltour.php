@@ -10,8 +10,11 @@
     <tr>
         <th style="width: 3%;background-color: #eee;line-height: 30px;">STT</th>
         <th style="width: 20%;background-color: #eee;line-height: 30px;">Tên tour</th>
-        <th style="width: 40%;background-color: #eee;line-height: 30px;">Ảnh tour</th>
+        <th style="width: 20%;background-color: #eee;line-height: 30px;">Ảnh tour</th>
         <th style="width: 10%;background-color: #eee;line-height: 30px;">Thời gian</th>
+        <th style="width: 10%;background-color: #eee;line-height: 30px;">Thông tin tour</th>
+        <th style="width: 10%;background-color: #eee;line-height: 30px;">Giá người lớn</th>
+        <th style="width: 10%;background-color: #eee;line-height: 30px;">Giá trẻ em</th>
         <th style="width: 12%;background-color: #eee;line-height: 30px;">Id địa điểm</th>
         <th style="width: 15%;background-color: #eee;line-height: 30px;" colspan ="2">Thao tác</th>
     </tr>
@@ -27,6 +30,9 @@
                             <img src="<?php echo _WEB_ROOT;?>/public/images/img_web/<?php echo $row['anhtour'] ?>" alt="" style="height: 200px;">
                         </td>
                         <td><?php echo $row['songay'] ?>(Ngày)</td>
+                        <td><?php echo $row['info_tour'] ?></td>
+                        <td><?php echo $row['gia_nguoi_lon'] ?>đ</td>
+                        <td><?php echo $row['gia_tre_em'] ?>đ</td>
                         <td><?php echo $row['iddiadiem']?></td>
                         <td><a href="">Sửa</a></td>
                         <td><a href="">Xóa</a></td>

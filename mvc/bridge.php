@@ -1,7 +1,6 @@
 <?php
 
-    include_once "./mvc/core/app.php";
-    include_once "./mvc/core/connectDB.php";
-    include_once "./mvc/core/controller.php";
-
+    include_once "./mvc/core/app.php"; // xử lý url
+    include_once "./mvc/core/connectDB.php"; //connect database
+    include_once "./mvc/core/controller.php"; //controller ->gọi model ->xử lí -> view
 ?>

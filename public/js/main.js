@@ -1,5 +1,4 @@
 
-
 let tabs = document.querySelectorAll(".menu_info-item")
 
 tabs.forEach(tab => {

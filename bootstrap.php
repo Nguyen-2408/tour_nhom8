@@ -1,5 +1,8 @@
+
+
 <?php
-    define('_DIR_ROOT', __DIR__);
+    define('_DIR_ROOT', __DIR__); //Lấy ra thư mục trong ổ
+    //echo _DIR_ROOT;
     //Xử lí http root
     if(isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] =='on'){
         $web_root = 'https://'.$_SERVER['HTTP_HOST'];
@@ -13,5 +16,5 @@
     define('_WEB_ROOT',$web_root);
 
     
-    include "./mvc/bridge.php";
+    include "./mvc/bridge.php"; 
 ?>

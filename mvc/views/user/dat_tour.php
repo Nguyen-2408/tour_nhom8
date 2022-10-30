@@ -2,86 +2,21 @@
 <div class="tour_ticket-in">
     <h3>---Đặt Tour Du Lịch---</h3>
     <div class="wrap_form_tour-in">
-        <form action="" class="form_tour-in">
-        <p>Thông Tin chi tiết về Tour Du Lịch</p>
+        <p>Thông tin chi tiết về tour: <?php 
+            if(isset($data['get_tour_info'])){
+                while($row = mysqli_fetch_assoc($data['get_tour_info'])) {
+                    echo $row['tentour'];
+                }
+            }else {
+                echo "Lỗi";
+            }
+        ?></p>
         <p>Ngày 1: ĐÀ NẴNG  – SƠN TRÀ – HỘI AN (Ăn tối)
-Chiều: Xe và HDV Du Lịch Green Tour đón quý khách tại sân bay, khởi hành về khách sạn check in nhận phòng nghỉ ngơi.  
+Chiều: Xe và HDV Du Lịch Green Tour đón quý khách tại sân bay, khởi hành về khách sạn check in nhận phòng nghỉ ngơi. <br><br> 
 
-Tiếp đến khởi hành đi tham quan danh thắng Ngũ Hành Sơn với nhiều điểm tham quan:
+Tiếp đến khởi hành với nhiều điểm tham quan:</p>
+</div>
 
-Chùa Tam Thai
-Vọng Giang Đài
-Động Huyền Không
-Động Hoa Nghiêm, Động Tàng Chơn
-Chùa Linh Ứng</p>
-        </form>
-    </div>
-    <div class="wrap_form_tour-in">
-        <form action="" class="form_tour-in">
-       
-            <table class="tbl_tour-ticket" >
-                    <tr>
-                        <th>Ngày Bắt Đầu Tour Du Lịch</th>
-                        <th>Ngày Kết Thúc Tour Du Lịch</th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="wrap_cus-amount">
-                                <input type="date" class="input tour_name-customer" name="startdate" id="_startdate">
-                            </div>
-                        </td>
-                        <td>
-                            <div class="wrap_cus-amount">
-                                <input type="date" class="input tour_name-customer" name="enddate" id="_enddate">
-                            </div>
-                        </td>
-                    </tr>
-                   
-
-            </table>
-            <p>Thông tin khách hàng</p>
-            <label for="" class="price_txt txt1">người lớn: 400000đ/1 người</label>
-            <label for="" class="price_txt txt2">trẻ em: 320000đ/1 người</label>
-            <label for="" class="amount_cus-text">Số lượng: <span class="amount_cus">1</span></label>
-            <table class="tbl_tour-ticket">
-                <tr>
-                    <th>Họ và tên</th>
-                    <th>Độ tuổi</th>
-                    <th>Giới tính</th>
-                    <th>Xóa</th>
-                </tr>
-                <tr>
-                    <td>
-                        <div class="wrap_cus-amount">
-                            <input type="text" placeholder="Ví dụ: Nguyễn Văn A" class="input tour_name-customer">
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <select name="age" class="input opt_age" onchange="countTag()">
-                                <option value="nguoilon">Người lớn</option>
-                                <option value="treem">Trẻ em</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div>
-                            <select name="sex" class="input opt_sex">
-                                <option value="1">Nam</option>
-                                <option value="0">Nữ</option>
-                            </select>
-                        </div>
-                    </td>
-                    <td>
-                        <div >
-                        </div>
-                    </td>
-                </tr>                       
-            </table>
-                <button type="button" class="btn_add-input"><i class="fa-solid fa-person-circle-plus"></i></button>
-
-        </form>
-    </div>
     <div class="wrap_content-customer">
         <div class="contact_customer">
             <form action="" class="contact_customer-form">
@@ -98,27 +33,26 @@ Chùa Linh Ứng</p>
                     <label for="">Email</label>
                     <input type="email">
                 </div>
-        </form>
-    </div>
-    <div class="wrap_ticket-price">
-        <div class="ticket_price">
-            <p class="title_price">Chi tiết giá tour du lịch</p>
-            <div class="ticket_price-item">
-                <label for="">Người lớn x <span class="count_adult">1</span></label>
-                <p><span class="price_adult">400000</span>đ</p>
-            </div>
-            <div class="ticket_price-item">
-                <label for="">Trẻ em x <span class="count_child">0</span></label>
-                <p><span class="price_child">0</span>đ</p>
-            </div>
-            <div class="ticket_price-item">
-                <label for="">Tổng tiền</label>
-                <p><span class="price_total">400000</span>đ</p>
-            </div>
+            </form>
         </div>
-    <div>
-        <button type="button" class="btn_book">Đặt vé ngay</button>
-    </div>
+    <div class="wrap_ticket-price">
+    <form action="" >
+        <div class="ticket_price">
+                <p class="title_price">Số lượng khách</p>
+                <div class="ticket_price-item">
+                    <label for="amount_adult">Người lớn x <input type="number" min = "1" class="amount_input" id="amount_adult"> </label>
+                    <p><span class="price_adult">400000</span>đ/1 người lớn</p>
+                </div>
+                <div class="ticket_price-item">
+                    <label for="amount_child">Trẻ em x <input type="number" min = "0" class="amount_input" id="amount_child"></label>
+                    <p><span class="price_child">0</span>đ/1 trẻ em</p>
+                </div>
+            
+        </div>
+        <div>
+            <input type="submit" name="btn_booktour" class="btn_booktour" value="Đặt tour ngay">
+        </div>
+    </form>
 </div>
 
 </div> 

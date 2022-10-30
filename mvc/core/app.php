@@ -24,13 +24,12 @@ class app {
     
     public function Urlprocess() {
         $url =$this->getUrl();
-        /* $urlArr =  explode("/", filter_var(trim($url, "/")));*/
         $urlArr =  array_filter(explode('/',$url));
         $urlArr = array_values($urlArr);
 
         //Xử lí controller
         if(isset($urlArr[0])) {
-            $this->controller = ucfirst($urlArr[0]);
+            $this->controller = ucfirst($urlArr[0]); // viết hoa chữ cái đầu
         }else{
             $this->controller = ucfirst($this->controller);
         }
@@ -40,7 +39,7 @@ class app {
             if(class_exists($this->controller)) {
                 $this->controller = new $this->controller;
             }else {
-                $this->loadError();
+                $this->loadError(); 
             }
             unset($urlArr[0]);
         }else{
@@ -53,7 +52,7 @@ class app {
         }
 
         //Xử lí param
-        $this->params = array_values($urlArr);
+        $this->params = array_values($urlArr); 
 
         if(method_exists($this->controller, $this->action)){
             call_user_func_array([$this->controller, $this->action], $this->params);
