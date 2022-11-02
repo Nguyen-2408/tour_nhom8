@@ -22,8 +22,6 @@
         <ul class="nav_user-list">
             <li class="nav_user-item"><a href="<?php echo _WEB_ROOT;?>/home/user_info" class="nav_user-link">Thông tin tài khoản</a></li>
             <li class="nav_user-item"><a href="" class="nav_user-link">Thông tin đặt tour</a></li>
-            <li class="nav_user-item"><a href="" class="nav_user-link">Phòng khách sạn</a></li>
-            <li class="nav_user-item"><a href="" class="nav_user-link">Vé máy bay</a></li>
             <li class="nav_user-item"><a href="<?php echo _WEB_ROOT;?>/home/logout" class="nav_user-link">Đăng xuất</a></li>
         </ul>
     </div>

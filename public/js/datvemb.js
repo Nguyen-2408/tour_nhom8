@@ -37,7 +37,7 @@ addTr.addEventListener("click", () =>{
     document.querySelector(".amount_cus").innerHTML = amountCustomer;
     let row = tblPlaneTicket.insertRow(index); //Them row mới
     let td1 = document.createElement("div"); //tạo div mới 
-        td1.innerHTML = ` <div class="wrap_cus-amount">
+        td1.innerHTML = `<div class="wrap_cus-amount">
                                 <input type="text" placeholder="Ví dụ:Nguyễn Văn A" class="input plane_name-customer">
                         </div>`;
         let cell1 = row.insertCell(0);

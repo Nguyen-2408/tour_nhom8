@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="<?php echo _WEB_ROOT;?>/public/css/thongtinuser.css">
     <link rel="stylesheet" href="<?php echo _WEB_ROOT;?>/public/css/main.css">
     
-    <title>Trang chủ</title>
+    <title><?php echo $data['page']?></title>
 </head>
 <body>
 
@@ -33,7 +33,7 @@
             include_once './mvc/views/user/login.php';
             include_once './mvc/views/user/signup.php';
         }
-        ?>  
+    ?>  
     
 
     <!-- Content -->

@@ -7,8 +7,8 @@
         
         function index(){
             $this->admin = $this->model('home_model');
-            
             $qltk = $this->admin->qltkAll();
+
             $this->view('admin_layout',[
                 'admin_view' => 'admin_qltk',
                 'qltk' => $qltk
@@ -25,9 +25,38 @@
                 'qltour' => $qltour,
                 'qldiadiem' => $kq
             ]);
-
-
         }
+        
+        function edit_user($id_user=''){
+ 
+        }
+        
+        function search_user() {
+            if(isset($_POST['btn_search-user'])){
+                $username = $_POST['username'];
+                $this->admin = $this->model('home_model');
+                $kq = $this->admin->search_user($username);
+               
+                if(mysqli_num_rows($kq) > 0){
+                    $this->view('admin_layout', [
+                        'admin_view' => 'admin_qltk',
+                        'kq' => $kq
+                    ]); 
+                } else {
+                    $this->view('admin_layout', [
+                        'admin_view' => 'admin_qltk',
+                        'no-result' => ''
+                    ]); 
+                }
+            }else {
 
+            }
+        }
+        function del_user($id_user) {
+            $this->admin = $this->model('home_model');
+            $this->admin->del_user($id_user);
+            
+            header('location: '._WEB_ROOT.'/admin');
+        }
     } 
 ?>

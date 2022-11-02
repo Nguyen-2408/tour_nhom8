@@ -10,7 +10,24 @@
             $sql = "SELECT * FROM user WHERE id = '$id_user'";
             return mysqli_query($this->conn, $sql);
         }
-       
+        
+        function del_user($id_user) {
+            $sql = "DELETE FROM user WHERE id = '$id_user'";
+            return mysqli_query($this->conn,$sql);
+        }
+        
+        function search_user($username) {
+            $sql = "SELECT * FROM user WHERE username LIKE '%$username%'";
+            return mysqli_query($this->conn, $sql);
+        }
+
+        function edit_user($id_user) {
+            
+
+                $sql = "UPDATE user SET username='$username', email='$email_ud', dienthoai='$sdt_ud', diachi='$diachi_ud'  WHERE id = '$id_user'";
+                return mysqli_query($this->conn,$sql);
+            
+        }
     }
 
 ?>

@@ -630,7 +630,7 @@
         position: absolute;
         top:0;
         right:0;
-        transform: translate(-60%,40%);
+        transform: translate(-60%,75px);
         border:1px solid #ccc;
         border-radius: 10px;
         background-color: #fff;
