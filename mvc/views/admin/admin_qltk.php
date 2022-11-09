@@ -1,4 +1,6 @@
 <!-- Quản lí tài khoản khách hàng -->
+    <h1>Quản lí tài khoản</h1>
+<!-- Tìm kiếm user -->
 <div class="form_search-user">
     <form action="<?php echo _WEB_ROOT;?>/admin/search_user" method ="POST">
         <div class="wrap_form-search">
@@ -14,16 +16,46 @@
     </form>
 </div>
 
-    <!-- Danh sách user -->
-<p style="padding-top:50px;font-size: 24px;font-weight: 700;text-align:center">Danh sách tài khoản</p>
-<div class="container" style="display: flex;align-item: center"> 
+<!-- Sửa user -->
+<?php
+    if(isset($data['edit_user'])) {
+        if(isset($data['user_info'])){
+            while($row = mysqli_fetch_assoc($data['user_info'])){
+                ?>
+       <div style=" text-align: center;
+                    margin-top: 25px;
+                    position: relative;
+                    margin-bottom: 330px;">
+           <p style="font-size: 18px; font-weight: 600">Sửa thông tin khách hàng</p>
+            <form action="<?php echo _WEB_ROOT;?>/admin/update_user/<?php echo $row['id'] ?>" method="POST" class="form_edit-user"> 
+                <div class="wrap_input-edit"><label for="" class="lb_form-edit">Username</label><input type="text" name="username_ud" value="<?php echo $row['username'] ?>" required class="input_form-edit"></div>
+                <div class="wrap_input-edit"><label for="" class="lb_form-edit">Email</label><input type="text" name="email_ud" value="<?php echo $row['email'] ?>" required class="input_form-edit"></div>
+                <div class="wrap_input-edit"><label for="" class="lb_form-edit">Số điện thoại</label><input type="text" name="sdt_ud" value="<?php echo $row['dienthoai'] ?>" class="input_form-edit"></div>
+                <div class="wrap_input-edit"><label for="" class="lb_form-edit">Địa chỉ</label><input type="text" name="diachi_ud" value="<?php echo $row['diachi'] ?>" class="input_form-edit"></div>
+                <input type="submit" value="Lưu" name="btn_edit-user" class="btn_edit-user">
+                <input type="submit" value="Hủy" name="btn_cancel" class="btn_edit-user">
+            </form>
+        </div> 
+    <?php
+            }
+        }
+    }
+?>
+
+<!-- Danh sách user -->
+<p style="padding-top:50px;
+        font-size: 24px;
+        font-weight: 700;
+        text-align:center">Danh sách tài khoản</p>
+<div class="container" style="display: flex;
+                            align-item: center"> 
 <table class="table table-hover table-bordered" style="position:relative;
-                                        margin-top: 20px;
-                                        text-align: center;
-                                        font-weight: 500;
-                                        font-size: 16px;
-                                        line-height: 50px;
-                                        border-color: #ccc">
+                                                    margin-top: 20px;
+                                                    text-align: center;
+                                                    font-weight: 500;
+                                                    font-size: 16px;
+                                                    line-height: 50px;
+                                                    border-color: #ccc">
     <tr>
         <th style="width: 3%;background-color: #eee;">STT</th>
         <th style="width: 5%;background-color: #eee;">Avatar</th>
@@ -107,7 +139,7 @@
                                 <?php
                             }else{
                                 ?>
-                                    <td><a href="">Sửa</a></td>
+                                    <td><a href="<?php echo _WEB_ROOT;?>/admin/edit_user/<?php echo $row['id'] ?>">Sửa</a></td>
                                     <td><a href="<?php echo _WEB_ROOT;?>/admin/del_user/<?php echo $row['id'] ?>">Xóa</a></td>
                                 <?php
                             }

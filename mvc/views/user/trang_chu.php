@@ -69,7 +69,7 @@
                                 <div>
                                 <!-- <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a> -->
                             </div>
-                            <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
+                            <img src="<?php echo _WEB_ROOT;?>/public/images/img_web/<?php echo $row['anhdiadiem'];?>" alt="" class="img_tour-trongnuoc">
                             <a href="<?php echo _WEB_ROOT;?>/danhsachtour/get_tour/<?php echo $row['id'] ?>" class="tour_detail">Xem chi tiết</a>
                             </div>
                             <?php
@@ -100,7 +100,7 @@
                             <div>
                                 <!-- <a href="#" class="heart_link"><i class="fa-regular fa-heart"></i></a> -->
                             </div>
-                            <img src="https://cdn1.ivivu.com/iVivu/2021/11/15/16/con-dao-370x395.png" alt="" class="img_tour-trongnuoc">
+                            <img src="<?php echo _WEB_ROOT;?>/public/images/img_web/<?php echo $row['anhdiadiem'];?>" alt="" class="img_tour-trongnuoc">
                             <a href="<?php echo _WEB_ROOT;?>/danhsachtour/get_tour/<?php echo $row['id'] ?>" class="tour_detail">Xem chi tiết</a>
                             </div>
                         <?php

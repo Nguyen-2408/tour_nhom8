@@ -12,7 +12,7 @@ let loadFile = (event) => {
     let output = document.querySelector('.avatar');
     output.src = URL.createObjectURL(event.target.files[0]);
     output.onload = () => {
-      URL.revokeObjectURL(output.src) // free memory
+      URL.revokeObjectURL(output.src)
     }
   };
 

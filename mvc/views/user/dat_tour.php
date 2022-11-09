@@ -5,55 +5,68 @@
         <p>Thông tin chi tiết về tour: <?php 
             if(isset($data['get_tour_info'])){
                 while($row = mysqli_fetch_assoc($data['get_tour_info'])) {
-                    echo $row['tentour'];
-                }
-            }else {
-                echo "Lỗi";
-            }
+                    echo '<p style="color: #6aa7ff; font-size: 20px">'.$row['tentour'].'('.$row['songay'].'Ngày)</p>';
+                
+            
         ?></p>
         <p>Ngày 1: ĐÀ NẴNG  – SƠN TRÀ – HỘI AN (Ăn tối)
 Chiều: Xe và HDV Du Lịch Green Tour đón quý khách tại sân bay, khởi hành về khách sạn check in nhận phòng nghỉ ngơi. <br><br> 
 
 Tiếp đến khởi hành với nhiều điểm tham quan:</p>
 </div>
-
+<form action='<?php echo _WEB_ROOT;?>/thongtindattour/show_bill/<?php echo $_SESSION['user_id'] ?>' method="POST">
+    <input type="hidden" name="tentour" value="<?php echo $row['tentour'] ?>">
+    <input type="hidden" name="songay" value="<?php echo $row['songay'] ?>">
     <div class="wrap_content-customer">
         <div class="contact_customer">
-            <form action="" class="contact_customer-form">
+            <div class="contact_customer-form">
                 <p>Thông tin liên hệ khách hàng</p>
                 <div class="contact_customer-item">
                     <label for="">Họ và tên</label>
-                    <input type="text">
+                    <input type="text" name="username_cont" required>
                 </div>
                 <div class="contact_customer-item">
                     <label for="">Số điện thoại</label>
-                    <input type="text">
+                    <input type="text" name="dienthoai_cont" required>
                 </div>
                 <div class="contact_customer-item">
                     <label for="">Email</label>
-                    <input type="email">
+                    <input type="email" name="email_cont" required>
                 </div>
-            </form>
+        </div>
         </div>
     <div class="wrap_ticket-price">
-    <form action="" >
         <div class="ticket_price">
                 <p class="title_price">Số lượng khách</p>
                 <div class="ticket_price-item">
-                    <label for="amount_adult">Người lớn x <input type="number" min = "1" class="amount_input" id="amount_adult"> </label>
-                    <p><span class="price_adult">400000</span>đ/1 người lớn</p>
+                    <label for="amount_adult">Người lớn x <input type="number" min = "1" class="amount_input" id="amount_adult" name="amount_adult" required> </label>
+                    <p><span class="price_adult"><?php echo $row['gia_nguoi_lon']; ?></span>đ/1 người lớn</p>       
                 </div>
                 <div class="ticket_price-item">
-                    <label for="amount_child">Trẻ em x <input type="number" min = "0" class="amount_input" id="amount_child"></label>
-                    <p><span class="price_child">0</span>đ/1 trẻ em</p>
+                    <label for="amount_child">Trẻ em x <input type="number" min = "0" class="amount_input" id="amount_child" name="amount_child" required></label>
+                    <p><span class="price_child"><?php echo $row['gia_tre_em'];?></span>đ/1 trẻ em</p>
                 </div>
-            
+                <?php
+                }
+            }
+                ?>
         </div>
         <div>
-            <input type="submit" name="btn_booktour" class="btn_booktour" value="Đặt tour ngay">
+            <?php
+                if(!isset($_SESSION['user_id'])){
+                    ?>
+                        <a href="<?php echo _WEB_ROOT;?>/login" class="link_login-dattour">Đăng nhập để đặt tour</a>
+                    <?php
+                }else{
+                    ?>
+                        <input type="submit" name="btn_booktour" class="btn_booktour" value="Đặt tour ngay">
+
+                    <?php
+                }
+            ?>
         </div>
-    </form>
 </div>
+</form>
 
 </div> 
 <br>

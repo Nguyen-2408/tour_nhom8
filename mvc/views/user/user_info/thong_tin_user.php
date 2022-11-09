@@ -7,8 +7,6 @@
             <ul id="list_infor">
                 <li class="list-infor1"><a href="">Quản lý tài khoản</a></li>
                 <li><a href="">Tour đã đặt</a></li>
-                <li><a href="">Đơn phòng khách sạn</a></li>
-                <li><a href="">Vé máy bay</a></li>
             </ul>
         </div>
         <div class="container" style="">

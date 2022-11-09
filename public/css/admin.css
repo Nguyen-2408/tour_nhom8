@@ -1,5 +1,13 @@
+h1 {
+    padding-top: 85px;
+    font-size: 25px;
+    font-weight: 700;
+    color: #000;
+    text-align: center;
+}
+
 .form_search-user{
-    margin-top: 80px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     padding-top: 40px;
@@ -76,4 +84,36 @@
     transform: translateX(-50%);
     top:50%;
     width: 20%;
+}
+
+.input_form-edit {
+    padding: 5px 20px 5px 5px;
+    font-size: 14px;
+}
+
+.lb_form-edit{
+    font-size: 14px;
+}
+
+.form_edit-user{
+    position: absolute;
+    padding: 20px;
+    border: 1px solid;
+    left: 50%;
+    top: 100%;
+    transform: translateX(-50%);
+}
+
+.wrap_input-edit{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.btn_edit-user{
+    width: 100%;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
 }

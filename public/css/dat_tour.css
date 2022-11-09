@@ -163,6 +163,7 @@
     margin-top:2rem;
     border:1px solid #ccc;
     border-radius: 10px;
+    position: relative;
 }
 
 .ticket_price {
@@ -191,4 +192,20 @@
     font-weight: 600;
 }
 
+.link_login-dattour{
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    width: 100%;
+    background-color: #ccc;
+    padding: 20px;
+    position: absolute;
+    bottom: 60px;
+    left: 0;
+    text-align: center;
+}
 
+.link_login-dattour:hover {
+    background-color: #2cccff;
+    color:#fff;
+}

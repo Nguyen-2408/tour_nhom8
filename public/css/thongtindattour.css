@@ -1,0 +1,19 @@
+.wrap_thongtindattour{
+    border: 1px solid;
+    margin: 10px;
+    padding: 10px 10px 10px 50px;
+}
+
+.thongtindattour {
+    margin-bottom: 10px;
+}
+
+.thongtindattour p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.thongtindattour span {
+    font-size: 18px;
+    font-weight: 700;
+}

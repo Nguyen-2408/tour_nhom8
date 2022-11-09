@@ -1,8 +1,8 @@
+
 <?php
     class Login extends controller {
         public $user;
-        function index() {
-            
+        function index() {            
             $this->check_user_log();
 
             $this->view('MasterLayout',[

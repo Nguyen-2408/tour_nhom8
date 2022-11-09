@@ -1,4 +1,4 @@
-
+/* 
 let addTr = document.querySelector(".btn_add-input");
 let delTr = document.querySelector(".btn_delete-input");
 let tblPlaneTicket = document.querySelector(".tbl_plane-ticket");
@@ -77,3 +77,4 @@ function deleteInput(r){
 }
 
 
+ */

@@ -32,25 +32,20 @@
                 $email = $_POST['ud_email'];
                 $sdt = $_POST['ud_sdt'];
                 $diachi = $_POST['ud_diachi'];
-                if(isset($_SESSION['avatar'])){
+                if(empty($_FILES['change_avatar']['name'])){
                     $fileanh_path = $_SESSION['avatar'];
+
                 }else {
                     $fileanh_path = basename($_FILES['change_avatar']['name']);
                 }
+
                 $target_dir = './public/images/avatars/';
-                $target_file = $target_dir .$fileanh_path;
+                $target_file = $target_dir . $fileanh_path;
                 $target_tmpName = $_FILES["change_avatar"]["tmp_name"];
+                move_uploaded_file($target_tmpName, $target_file );
                 
                 $user_info = $this->user->qltkAll();
-                $update = $this->ud_user->update_user($id_user,$email, $sdt, $fileanh_path, $diachi);
-                    if($user_info){
-                        while($row = mysqli_fetch_assoc($user_info)){
-                            if($fileanh_path == $row['avatar']){
-                                !move_uploaded_file($target_tmpName, $target_file);
-                            }else{
-                                move_uploaded_file($target_tmpName, $target_file);
-                            }
-                        }
+                $update = $this->ud_user->update_user($id_user,$email, $sdt, $fileanh_path, $diachi);                      
                         if($update){
                             if($fileanh_path != ""){
                                 $_SESSION['avatar'] = $fileanh_path;
@@ -71,7 +66,6 @@
                                     'error' => ''
                                 ]);
                             }          
-                }
             }
         }
 

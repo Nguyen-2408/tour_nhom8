@@ -16,16 +16,15 @@
                 <a href="<?php echo _WEB_ROOT;?>" class="menu_link"><li class="list_item">Trang chủ</li></a>
                 <a href="<?php echo _WEB_ROOT;?>/gioithieu" class="menu_link"><li class="list_item">Giới thiệu</li></a>
                 <a href="<?php echo _WEB_ROOT;?>/danhsachtour" class="menu_link"><li class="list_item">Tour</li></a>
-                <a href="<?php echo _WEB_ROOT;?>" class="menu_link"><li class="list_item">Khách sạn</li></a>
-                <li class="list_item">Phương tiện
+                <!-- <li class="list_item">Phương tiện
                     <div class="sub_menu">
                         <ul class="sub_menu-list">
-                            <a href="<?php echo _WEB_ROOT;?>/vemaybay/dat_ve_mb" class="sub_menu-item"><li>Vé máy bay</li></a>
+                            <a href="<?php /* echo _WEB_ROOT; */?>/vemaybay/dat_ve_mb" class="sub_menu-item"><li>Vé máy bay</li></a>
                             <a href="" class="sub_menu-item"><li>Ô tô</li></a>
                         </ul>
                     </div>
-                </li>
-                <a href="<?php echo _WEB_ROOT;?>" class="menu_link"><li class="list_item">Liên hệ</li></a>
+                </li> -->
+                <a href="#contact" class="menu_link"><li class="list_item">Liên hệ</li></a>
                 
             </ul>
         </div>
