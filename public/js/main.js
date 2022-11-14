@@ -1,5 +1,5 @@
 
-let tabs = document.querySelectorAll(".menu_info-item")
+/* let tabs = document.querySelectorAll(".menu_info-item")
 
 tabs.forEach(tab => {
     tab.addEventListener("click", () => {
@@ -7,7 +7,7 @@ tabs.forEach(tab => {
         tab.classList.add("active");
     })
 });
-
+ */
 let loadFile = (event) => {
     let output = document.querySelector('.avatar');
     output.src = URL.createObjectURL(event.target.files[0]);

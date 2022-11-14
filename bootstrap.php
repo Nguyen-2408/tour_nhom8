@@ -1,5 +1,5 @@
 
-
+<!-- Xử lí lấy ra web root -->
 <?php
     define('_DIR_ROOT', __DIR__); //Lấy ra thư mục trong ổ
     //echo _DIR_ROOT;

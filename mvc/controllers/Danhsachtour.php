@@ -63,15 +63,9 @@
                     
         
                 }
-            }else {
-                $this->loadError();
             }
         }
 
-        
-        function loadError($name = '404') {
-            require_once './mvc/errors/'.$name.'.php';
-        }
     }
                 
 

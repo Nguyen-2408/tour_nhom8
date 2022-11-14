@@ -1,4 +1,4 @@
-<a href="" class="cart_amount">
+<a href="<?php echo _WEB_ROOT;?>/thongtindattour" class="cart_amount">
     <i class="fa-solid fa-cart-shopping"></i>                   
 </a>  
 <div class="wrap_user-info">

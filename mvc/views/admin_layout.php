@@ -53,7 +53,7 @@
             <ul class="list_menu">
                 <a href="<?php echo _WEB_ROOT.'/admin';?>" class="menu_link"><li class="list_item">Quản lí tài khoản </li></a>
                 <a href="<?php echo _WEB_ROOT.'/admin/qltour';?>" class="menu_link"><li class="list_item">Quản lí thông tin tour</li></a>
-                <a href="<?php echo _WEB_ROOT.'/admin';?>" class="menu_link"><li class="list_item">Quản lí đơn</li></a>
+                <a href="<?php echo _WEB_ROOT.'/admin/qldon';?>" class="menu_link"><li class="list_item">Quản lí đơn</li></a>
                 
             </ul>
         </div>

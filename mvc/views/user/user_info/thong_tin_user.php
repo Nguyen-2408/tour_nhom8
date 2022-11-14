@@ -1,15 +1,7 @@
 
-    <div class="infor_person">
-        <h2>Thông tin tài khoản</h2>
-    </div>
+    
     <div class="content">
-        <div class="nav">
-            <ul id="list_infor">
-                <li class="list-infor1"><a href="">Quản lý tài khoản</a></li>
-                <li><a href="">Tour đã đặt</a></li>
-            </ul>
-        </div>
-        <div class="container" style="">
+        <div class="container">
         <form action="<?php echo _WEB_ROOT;?>/home/update_user" method="post" enctype="multipart/form-data" style="display: flex;
                                                                                             width:100%;
                                                                                             justify-content: space-between">

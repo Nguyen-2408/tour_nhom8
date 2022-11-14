@@ -10,7 +10,7 @@
             
             $dd_trongnuoc = $this->diadiem->get_dia_diem_trong_nuoc();
             $dd_nuocngoai = $this->diadiem->get_dia_diem_nuoc_ngoai();
-
+            
             $this->view('MasterLayout',[
                 'page' => 'trang_chu',
                 'dd_trongnuoc' => $dd_trongnuoc,
@@ -20,7 +20,8 @@
         
         function user_info(){
             $this->view('MasterLayout', [
-                'page' => 'user_info/thong_tin_user'
+                'page' => 'user_info/menu_user-info',
+                'page_user-info' => 'thong_tin_user'
             ]);
         }
         
@@ -45,27 +46,28 @@
                 move_uploaded_file($target_tmpName, $target_file );
                 
                 $user_info = $this->user->qltkAll();
-                $update = $this->ud_user->update_user($id_user,$email, $sdt, $fileanh_path, $diachi);                      
-                        if($update){
-                            if($fileanh_path != ""){
-                                $_SESSION['avatar'] = $fileanh_path;
-                            }else {
-                                while($row = mysqli_fetch_assoc($user_info)){
-                                    $_SESSION['avatar'] = $row['avatar'];
-                                }
-                            }
-                            $_SESSION['email'] = $email;
-                            $_SESSION['sdt'] = $sdt;
-                            $_SESSION['diachi'] = $diachi;
-                                $this->view('MasterLayout', [
-                                    'page' => 'user_info/thong_tin_user'
-                                ]);
-                            }else {
-                                $this->view('MasterLayout', [
-                                    'page' => 'user_info/thong_tin_user',
-                                    'error' => ''
-                                ]);
-                            }          
+                $update = $this->ud_user->update_user($id_user,$email, $sdt, $fileanh_path, $diachi);       
+
+                if($update){
+                    if($fileanh_path != ""){
+                        $_SESSION['avatar'] = $fileanh_path;
+                    }else {
+                        while($row = mysqli_fetch_assoc($user_info)){
+                            $_SESSION['avatar'] = $row['avatar'];
+                        }
+                    }
+                    $_SESSION['email'] = $email;
+                    $_SESSION['sdt'] = $sdt;
+                    $_SESSION['diachi'] = $diachi;
+                        $this->view('MasterLayout', [
+                            'page' => 'user_info/thong_tin_user'
+                        ]);
+                }else {
+                    $this->view('MasterLayout', [
+                        'page' => 'user_info/thong_tin_user',
+                        'error' => ''
+                    ]);
+                }          
             }
         }
 

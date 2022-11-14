@@ -15,7 +15,26 @@
     <link rel="stylesheet" href="<?php echo _WEB_ROOT;?>/public/css/thongtinuser.css">
     <link rel="stylesheet" href="<?php echo _WEB_ROOT;?>/public/css/main.css">
     
-    <title><?php echo $data['page']?></title>
+    <title><?php 
+        switch($data['page']) {
+            case 'trang_chu':
+                echo "Trang chủ";
+                break;
+            case 'gioithieu':
+                echo "Giới thiệu";
+                break;
+            case 'user_info/thong_tin_user':
+                echo "Thông tin tài khoản";
+                break;
+            case 'danh_sach_tour':
+                echo "Danh sách tour";
+                break;
+            case 'dat_tour':
+                echo "Đặt tour";
+                break;
+        }
+    ?></title>
+            
 </head>
 <body>
 
@@ -47,7 +66,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-  <!--   <script src="<?php echo _WEB_ROOT;?>/public/js/datvemb.js"></script> -->
+  <!--   <script src="<?php/*  echo _WEB_ROOT; */?>/public/js/datvemb.js"></script> -->
     <script src="<?php echo _WEB_ROOT;?>/public/js/main.js"></script>
 
     

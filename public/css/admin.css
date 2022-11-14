@@ -65,8 +65,7 @@ h1 {
 }
 
 .input_search-user:focus {
-    background-color: #fff;
-    
+    background-color: #fff; 
 }
 
 .input_search-user:not(:placeholder-shown) + .txt_search,
@@ -117,3 +116,38 @@ h1 {
     font-weight: 700;
     margin-bottom: 10px;
 }
+
+.form_search-tour{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    align-items: center;
+}
+
+.input_search-tour {
+    padding: 5px 50px 5px 10px;
+    height: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background-color: #fff;
+    transition: 0.35s linear;
+}
+
+
+.input_search-tour:focus {
+    background-color: #fff; 
+}
+
+.input_search-tour:not(:placeholder-shown) + .txt_search,
+.input_search-tour:focus + .txt_search {
+    top: 0px;
+    font-size: 14px;
+    background-color: #fff;
+    padding: 0 5px;
+    color: #000;
+}
+

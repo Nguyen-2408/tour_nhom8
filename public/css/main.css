@@ -179,6 +179,11 @@
         background-color: rgb(236, 190, 190);
     } 
 
+    h1 {
+        font-size: 28px;
+        font-weight: 700;
+    }
+
     h3 {
         font-size: 3.2rem;
         font-weight: 700;
