@@ -9,6 +9,7 @@
             $sql = "SELECT * FROM diadiem WHERE type = '0'";
             return mysqli_query($this->conn, $sql);
         }
+        
         function get_dia_diem_nuoc_ngoai(){
             $sql = "SELECT * FROM diadiem WHERE type = '1'";
             return mysqli_query($this->conn, $sql);

@@ -33,7 +33,9 @@
                 <div class="wrap_input-edit"><label for="" class="lb_form-edit">Số điện thoại</label><input type="text" name="sdt_ud" value="<?php echo $row['dienthoai'] ?>" class="input_form-edit"></div>
                 <div class="wrap_input-edit"><label for="" class="lb_form-edit">Địa chỉ</label><input type="text" name="diachi_ud" value="<?php echo $row['diachi'] ?>" class="input_form-edit"></div>
                 <input type="submit" value="Lưu" name="btn_edit-user" class="btn_edit-user">
-                <input type="submit" value="Hủy" name="btn_cancel" class="btn_edit-user">
+                <a href="<?php echo _WEB_ROOT;?>/admin">
+                        <input type="button" value="Hủy" class="btn_edit-user" onclick = "if (!confirm('Bạn có muốn hủy?')) { return false; }">
+                    </a>
             </form>
         </div> 
     <?php
@@ -97,7 +99,7 @@
                             }else{
                                 ?>
                                     <td><a href="<?php echo _WEB_ROOT;?>/admin/edit_user/<?php echo $row['id'] ?>">Sửa</a></td>
-                                    <td><a href="<?php echo _WEB_ROOT;?>/admin/del_user/<?php echo $row['id'] ?>">Xóa</a></td>
+                                    <td><a href="<?php echo _WEB_ROOT;?>/admin/del_user/<?php echo $row['id'] ?>" class="delete-user" onclick = "if (!confirm('Bạn chắc chắn muốn xóa?')) { return false; }">Xóa</a></td>
                                 <?php
                             }
                         ?>

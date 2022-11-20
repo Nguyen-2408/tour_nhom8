@@ -24,7 +24,6 @@
         function edit_user($id_user, $username_ud, $email_ud, $sdt_ud, $diachi_ud) {
             $sql = "UPDATE user SET username='$username_ud', email='$email_ud', dienthoai='$sdt_ud', diachi='$diachi_ud'  WHERE id = '$id_user'";
             return mysqli_query($this->conn,$sql);
-            
         }
 
         /* db tour */

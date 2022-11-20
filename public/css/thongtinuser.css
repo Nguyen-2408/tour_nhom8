@@ -75,10 +75,6 @@
     border-radius: 8px;
 }
 
-.content{
-    background-color: rgb(227, 255, 255);
-    padding-bottom:30px;
-}
 
 .btn-form{
     padding-top: 12px;
@@ -168,4 +164,22 @@
 
 .wrap_avatar:hover .icon_camera {
     opacity: 1;
+}
+
+.information {
+    width: 50%;
+    margin: 50px 0;
+}
+
+.information-input {
+    margin: 20px 0;
+}
+
+.form-control {
+    padding: 12px 20px 12px 15px;
+    width: 70%;
+    font-size: 16px;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #ccc;
 }

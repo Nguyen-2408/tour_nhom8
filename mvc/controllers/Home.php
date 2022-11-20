@@ -21,7 +21,8 @@
         function user_info(){
             $this->view('MasterLayout', [
                 'page' => 'user_info/menu_user-info',
-                'page_user-info' => 'thong_tin_user'
+                'page_user-info' => 'thong_tin_user',
+                'active_user_info' => ''
             ]);
         }
         
@@ -60,13 +61,11 @@
                     $_SESSION['sdt'] = $sdt;
                     $_SESSION['diachi'] = $diachi;
                         $this->view('MasterLayout', [
-                            'page' => 'user_info/thong_tin_user'
+                            'page' => 'user_info/menu_user-info',
+                            'page_user-info' => 'thong_tin_user'
                         ]);
                 }else {
-                    $this->view('MasterLayout', [
-                        'page' => 'user_info/thong_tin_user',
-                        'error' => ''
-                    ]);
+                    echo "Không sửa được thông tin";
                 }          
             }
         }

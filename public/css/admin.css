@@ -81,7 +81,7 @@ h1 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    top:50%;
+    margin-top: 100px;
     width: 20%;
 }
 
@@ -118,11 +118,9 @@ h1 {
 }
 
 .form_search-tour{
-    margin-top: 30px;
     display: flex;
-    justify-content: center;
-    padding-top: 40px;
-    align-items: center;
+    justify-content: right;
+    margin-right: 50px;
 }
 
 .input_search-tour {
@@ -151,3 +149,7 @@ h1 {
     color: #000;
 }
 
+/* .form_edit-tour {
+    border: 1px solid;
+    width: 500px;
+} */

@@ -191,18 +191,24 @@
     font-size: 16px;
     font-weight: 600;
 }
+.wrap_link_login-dattour{
+    position: relative;
+}
 
 .link_login-dattour{
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
-    width: 100%;
+    width: 90%;
     background-color: #ccc;
-    padding: 20px;
     position: absolute;
-    bottom: 60px;
-    left: 0;
-    text-align: center;
+    top: 30px;
+    left: 50%;
+    height: 60px;
+    transform: translateX(-50%);
+    border-radius: 10px;
+    transition: 0.15s linear;
+    color: #333;
 }
 
 .link_login-dattour:hover {

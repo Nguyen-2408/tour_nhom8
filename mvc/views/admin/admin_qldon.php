@@ -1,4 +1,58 @@
+<style>
+    .form_search-don{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    align-items: center;
+}
+
+.input_search-don {
+    padding: 5px 50px 5px 10px;
+    height: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background-color: #fff;
+    transition: 0.35s linear;
+}
+.input_search-don:focus {
+    background-color: #fff; 
+}
+
+.input_search-don:not(:placeholder-shown) + .txt_search,
+.input_search-don:focus + .txt_search {
+    top: 0px;
+    font-size: 14px;
+    background-color: #fff;
+    padding: 0 5px;
+    color: #000;
+}
+
+
+</style>
+
 <p style="padding-top:100px;font-size: 24px;font-weight: 700;text-align:center">Danh sách đơn đặt tour</p>
+
+
+<!-- Tìm kiếm user -->
+<div class="form_search-don">
+    <form action="<?php echo _WEB_ROOT;?>/admin/search_don" method ="POST">
+        <div class="wrap_form-search">
+            <input type="text" name="tentour" placeholder=" "  class="input_search-don" id="input_search-don" value="<?php if(isset($_POST['tentour'])) {echo $_POST['tentour'];} ?>">
+            <label for="input_search-don" class="txt_search">Tên tour</label>
+            <label for="btn_search-don" class="wrap_icon-search">
+                <div>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </label>
+        </div>
+        <input type="submit" value="" name="btn_search-don" hidden id="btn_search-don">
+    </form>
+</div>
+
 <div class="container" style="display: flex;align-item: center"> 
 <table class="table table-hover table-bordered" style=";
                                         margin-top: 20px;
@@ -14,8 +68,9 @@
         <th style="width: 10%;background-color: #eee;line-height: 30px;">Số điện thoại</th>
         <th style="width: 10%;background-color: #eee;line-height: 30px;">email</th>
         <th style="width: 12%;background-color: #eee;line-height: 30px;">Số người lớn</th>
-        <th style="width: 12%;background-color: #eee;line-height: 30px;">Số trẻ em</th>
-        <th style="width: 12%;background-color: #eee;line-height: 30px;">Id user</th>
+        <th style="width: 10%;background-color: #eee;line-height: 30px;">Số trẻ em</th>
+        <th style="width: 10%;background-color: #eee;line-height: 30px;">Thành tiền</th>
+        <th style="width: 4%;background-color: #eee;line-height: 30px;">Id user</th>
         <th style="width: 15%;background-color: #eee;line-height: 30px;">Thao tác</th>
     </tr>
     <?php 
@@ -26,17 +81,50 @@
                     <tr>
                         <td style="background-color: #eee;"><?php echo $stt ?></td>
                         <td><?php echo $row['tentour'] ?></td>
-                        <td><?php echo $row['songay'] ?>(Ngày)</td>
+                        <td><?php echo $row['songay'] ?>(ngày)</td>
                         <td><?php echo $row['username'] ?></td>
                         <td><?php echo $row['dienthoai'] ?></td>
                         <td><?php echo $row['email'] ?></td>
                         <td><?php echo $row['so_nguoi_lon'] ?>người</td>
                         <td><?php echo $row['so_tre_em'] ?>người</td>
+                        <td><?php echo $row['gia_tien'] ?>đ</td>
                         <td><?php echo $row['id_user']?></td>
-                        <td><a href="">Xóa</a></td>
+                        <td><a href="<?php echo _WEB_ROOT;?>/admin/del_don/<?php echo $row['id']; ?>" onclick = "if (!confirm('Bạn chắc chắn muốn xóa?')) { return false; }">Xóa</a></td>
                     </tr>
                 <?php
                 $stt++;
+            }
+        }
+    ?>
+
+    <?php
+        if(isset($data['don_tour'])){
+            $stt = 1;
+            while($row = mysqli_fetch_assoc($data['don_tour'])) {
+                ?>
+                    <tr>
+                    <td style="background-color: #eee;"><?php echo $stt ?></td>
+                        <td><?php echo $row['tentour'] ?></td>
+                        <td><?php echo $row['songay'] ?>(ngày)</td>
+                        <td><?php echo $row['username'] ?></td>
+                        <td><?php echo $row['dienthoai'] ?></td>
+                        <td><?php echo $row['email'] ?></td>
+                        <td><?php echo $row['so_nguoi_lon'] ?>người</td>
+                        <td><?php echo $row['so_tre_em'] ?>người</td>
+                        <td><?php echo $row['gia_tien'] ?>đ</td>
+                        <td><?php echo $row['id_user']?></td>
+                        <td><a href="<?php echo _WEB_ROOT;?>/admin/del_don/<?php echo $row['id']; ?>" onclick = "if (!confirm('Bạn chắc chắn muốn xóa?')) { return false; }">Xóa</a></td>
+                    </tr>
+                    
+                <?php
+                $stt++;
+            }
+        }else {
+            if(isset($data['no-result'])) {
+            ?>
+            
+            <img src="https://medplus.vn/images/404.png" alt="" class="no_result-img">
+        <?php
             }
         }
     ?>

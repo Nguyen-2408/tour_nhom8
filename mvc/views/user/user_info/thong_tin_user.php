@@ -3,8 +3,8 @@
     <div class="content">
         <div class="container">
         <form action="<?php echo _WEB_ROOT;?>/home/update_user" method="post" enctype="multipart/form-data" style="display: flex;
-                                                                                            width:100%;
-                                                                                            justify-content: space-between">
+                                                                                                                    width:100%;
+                                                                                                                    justify-content: space-between">
            <div style="position: relative">
                <label for="change_avatar" style="position: absolute;top:20px;left: 100px">
                    <?php
@@ -54,9 +54,4 @@
             </form>
         </div>
     </div>
-    <?php
-        if(isset($data['error'])) {
-            echo "<p>Không thể sửa thông tin</p>";
-        }
-    ?>
     

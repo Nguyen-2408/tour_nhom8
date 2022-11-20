@@ -6,10 +6,64 @@ tabs.forEach(tab => {
         (document.querySelector(".active")).classList.remove("active");
         tab.classList.add("active");
     })
+}); */
+
+
+/* loader */
+const loader = document.querySelector('.loader');
+
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        loader.classList.add('fade_out');
+        setTimeout(() => {    
+            loader.style.display = 'none'; 
+        }, 1000);
+
+    },1000)
+})
+/*  */
+  
+let textTienTours = document.querySelectorAll('.txt_giatientour');
+textTienTours.forEach(element => {
+    let txtTienTour = Number(element.innerHTML);
+    element.innerHTML  =  txtTienTour.toLocaleString("en-US");
 });
- */
+
+function tinhTienTour(){
+
+    let giaTienTour = document.querySelector('.giatien_tour');
+    let soNguoiLon = document.querySelector('#amount_adult').value;
+    let soTreEm = document.querySelector('#amount_child').value;
+    let giaTienNguoiLon = document.querySelector('.price_adult').innerHTML;
+    let giaTienTreEm = document.querySelector('.price_child').innerHTML;
+    
+    let priceValue = (soNguoiLon * giaTienNguoiLon) + (soTreEm * giaTienTreEm);
+    
+    giaTienTour.setAttribute("value",String(priceValue));
+}
+function updateTienTour(){
+
+    let giaTienTour = document.querySelector('.update_giatientour');
+    let soNguoiLon = document.querySelector('#so_nguoi_lon').value;
+    let soTreEm = document.querySelector('#so_tre_em').value;
+    let giaTienNguoiLon = document.querySelector('.gia_nguoi_lon').value;
+    let giaTienTreEm = document.querySelector('.gia_tre_em').value;
+    
+    let priceValue = (soNguoiLon * giaTienNguoiLon) + (soTreEm * giaTienTreEm);
+    
+    giaTienTour.setAttribute("value",String(priceValue));
+}
+    
 let loadFile = (event) => {
     let output = document.querySelector('.avatar');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = () => {
+      URL.revokeObjectURL(output.src)
+    }
+  };
+
+let load_anh_tour = (event) => {
+    let output = document.querySelector('.img_tour_descr');
     output.src = URL.createObjectURL(event.target.files[0]);
     output.onload = () => {
       URL.revokeObjectURL(output.src)
@@ -75,4 +129,7 @@ eyeCloseSignUp1.addEventListener("click", function(){
     eyeOpenSignUp1.classList.remove("hidden");
     pass_again.setAttribute("type", "text");
 });
+
+
+
 
