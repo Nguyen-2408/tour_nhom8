@@ -1,3 +1,15 @@
+<style>
+    .btn_export-user{
+        float: right;
+        margin-right: 50px;
+        font-size: 16px;
+        padding: 10px 40px;
+        font-weight: 600;
+    }
+
+    
+</style>
+
 <!-- Quản lí tài khoản khách hàng -->
     <h1>Quản lí tài khoản</h1>
 <!-- Tìm kiếm user -->
@@ -44,11 +56,20 @@
     }
 ?>
 
+
 <!-- Danh sách user -->
 <p style="padding-top:50px;
         font-size: 24px;
         font-weight: 700;
         text-align:center">Danh sách tài khoản</p>
+
+
+<!-- Xuất excel -->
+    <form action="<?php echo _WEB_ROOT;?>/admin/export_excel_user" method ="POST" enctype="multipart/form-data">
+        <input type="submit" name="btn_export_excel" value="Xuất excel" class="btn_export-user">
+    </form>
+
+
 <div class="container" style="display: flex;
                             align-item: center"> 
 <table class="table table-hover table-bordered" style="position:relative;

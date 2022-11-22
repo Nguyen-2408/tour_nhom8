@@ -140,6 +140,29 @@
         background-color: #0dcaf0;
         color: #fff;
     }
+    .btn_export-tour{
+        float: right;
+        margin-right: 30px;
+        font-size: 16px;
+        padding: 10px 40px;
+        font-weight: 600;
+    }
+    .btn_import-tour{
+        font-size: 16px;
+        padding: 10px 40px;
+        font-weight: 600;
+        border: 1px solid #ccc;
+    }
+    .input_file_excel{
+        width: 120px;
+        margin:0 10px;
+        font-size: 12px;
+    }
+    .form_import {
+        float: right;
+        margin-right: 10px;
+        border:1px solid #333;
+    }
     </style>
 <p style="margin-top:80px;
         padding: 10px 0;
@@ -164,7 +187,6 @@
 </div>
 
 <!-- Thêm tour -->
-
 
 <?php
     if(isset($data['form_add_tour'])) {
@@ -279,6 +301,20 @@ if(isset($data['edit-tour'])){
         font-size: 24px;
         font-weight: 700;
         text-align:center">Danh sách tour</p>
+        <!-- Nhập excel -->
+        <div class="form_import">
+            <form action="<?php echo _WEB_ROOT;?>/admin/import_excel_tour" method ="POST" enctype="multipart/form-data">
+                <input type="file" name="fileExcel" id="" class="input_file_excel" required>
+                
+                <input type="submit" name="btn_import_excel" value="Nhập excel" class="btn_import-tour">
+            </form>
+        </div>
+
+    <!-- Xuất excel -->
+    <form action="<?php echo _WEB_ROOT;?>/admin/export_excel_tour" method ="POST" enctype="multipart/form-data">
+        <input type="submit" name="btn_export_excel" value="Xuất excel" class="btn_export-tour">
+    </form>
+
 <div class="container" style="display: flex;
                             align-item: center"> 
 <table class="table table-hover table-bordered" style=";

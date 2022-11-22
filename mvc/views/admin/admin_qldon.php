@@ -31,6 +31,14 @@
     color: #000;
 }
 
+.btn_export-don{
+    float: right;
+    margin-right: 230px;
+    font-size: 16px;
+    padding: 10px 40px;
+    font-weight: 600;
+}
+
 
 </style>
 
@@ -52,9 +60,12 @@
         <input type="submit" value="" name="btn_search-don" hidden id="btn_search-don">
     </form>
 </div>
+<form action="<?php echo _WEB_ROOT;?>/admin/export_excel_don" method ="POST" enctype="multipart/form-data">
+    <input type="submit" name="btn_export_excel" value="Xuất excel" class="btn_export-don">
+</form>
 
 <div class="container" style="display: flex;align-item: center"> 
-<table class="table table-hover table-bordered" style=";
+    <table class="table table-hover table-bordered" style=";
                                         margin-top: 20px;
                                         text-align: center;
                                         font-weight: 700;

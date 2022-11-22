@@ -26,6 +26,11 @@
             return mysqli_query($this->conn,$sql);
         }
 
+        function export_user() {
+            $sql = "SELECT * FROM user";
+            return mysqli_query($this->conn, $sql);
+        }
+
         /* db tour */
         function search_tour($tourname) {
             $sql = "SELECT * FROM dstour WHERE tentour LIKE '%$tourname%'";

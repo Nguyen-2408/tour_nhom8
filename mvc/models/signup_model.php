@@ -10,5 +10,6 @@
             $kq = mysqli_query($this->conn, $sql);
             return $kq;
         }
+
     }
 ?>
