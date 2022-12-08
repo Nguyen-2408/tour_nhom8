@@ -1,3 +1,31 @@
+<style>
+    .wrap_price_tour {
+        position: absolute;
+        right: 50px;
+        bottom: 50px;
+        justify-content: ;
+           
+    }
+
+    .wrap_price_tour p{
+        font-size: 14px;
+        font-weight: 600;
+        color: #46ae3c;
+
+    }
+
+    .text_gianguoilon{
+        color: #46ae3c;
+    }
+
+    .text_giatreem{
+        color: #46ae3c;
+    }
+
+    
+
+</style>
+
 <div>
     <div>
         <form action="<?php echo _WEB_ROOT;?>/danhsachtour/tim_kiem_tour" method="POST">
@@ -15,7 +43,6 @@
                                 </label>
                             </div>
                                 <input type="submit" name="btn_tim_kiem_tour" id="search_dstour" value="" hidden>
-                            
                         </td>
                     </tr> 
                 </table>
@@ -31,8 +58,7 @@
                     <ul class="dd_tour-list">
                         <?php
                             if(isset($data['dd_trongnuoc'])){
-                                while($row = mysqli_fetch_assoc($data['dd_trongnuoc'])){ 
-                                    
+                                while($row = mysqli_fetch_assoc($data['dd_trongnuoc'])) { 
                                     ?>
                                         <a href="<?php echo _WEB_ROOT;?>/danhsachtour/get_tour/<?php echo $row['id'] ?>" class="dd_tour-link"><li><?php echo $row['tendiadiem'] ?></li>
                                         </a>
@@ -82,6 +108,10 @@
                             </div>
                             <p class="tour_name"><?php echo $row['tentour'] ?></p>
                             <p class="tour_date">Thời gian: <?php echo $row['songay'] ?> ngày</p>
+                            <div class="wrap_price_tour">
+                                <p><span style="color:#333;">Giá người lớn:  </span><span class="text_gianguoilon"><?php echo $row['gia_nguoi_lon'];?></span>đ</p>
+                                <p><span style="color:#333;">Giá trẻ em:  </span><span class="text_giatreem"><?php echo $row['gia_tre_em'];?></span>đ</p>
+                            </div>
                         </div>
                     </a> 
                     <?php
@@ -97,8 +127,12 @@
                                 <div class= "wrap_img_tour_item">
                                     <img src="<?php echo _WEB_ROOT;?>/public/images/img_web/<?php echo $row['anhtour'];?>" alt="" class="img_tour_item">
                                 </div>
-                                <p class="tour_name"><?php echo $row['tentour'] ?></p>
-                                <p class="tour_date">Thời gian: <?php echo $row['songay'] ?> ngày</p>
+                                <p class="tour_name"><?php echo $row['tentour'];?></p>
+                                <p class="tour_date">Thời gian: <?php echo $row['songay'];?> ngày</p>
+                                <div class="wrap_price_tour">
+                                    <p><span style="color:#333;">Giá người lớn:  </span><span class="text_gianguoilon"><?php echo $row['gia_nguoi_lon'];?></span>đ</p>
+                                    <p><span style="color:#333;">Giá trẻ em:  </span><span class="text_giatreem"><?php echo $row['gia_tre_em'];?></span>đ</p>
+                                </div>
                             </div>
                         </a> 
                         <?php
@@ -110,41 +144,7 @@
                 }
             }
             ?>
-                
-            
-
-            
-
-
-            <!-- <a href="" class="tour_item-link">
-                <div class="tour_item">
-                    <div>
-                        <img src="./calendar_icon.png" alt="" class="img_tour_item">
-                    </div>
-                    <p class="tour_name">tour Hồ Gươm - Cà Mau :))</p>
-                    <p class="tour_date">Thời gian: 4 ngày</p>
-                </div>
-            </a>
-
-            <a href="" class="tour_item-link"><div class="tour_item">
-                <div>
-                    <img src="./calendar_icon.png" alt="" class="img_tour_item">
-                </div>
-                <p class="tour_name">tour Hồ Gươm - Cà Mau :))</p>
-                <p class="tour_date">Ngày khởi hành 21/12/2022</p>
-            </div>
-            </a>
-            <a href="" class="tour_item-link"><div class="tour_item">
-                <div>
-                    <img src="./calendar_icon.png" alt="" class="img_tour_item">
-                </div>
-                <p class="tour_name">tour Hồ Gươm - Cà Mau :))</p>
-                <p class="tour_date">Ngày khởi hành 21/12/2022</p>
-            </div>
-            </a> -->
-            
-            
-            
+        
         </div>
     </div>
 </div>

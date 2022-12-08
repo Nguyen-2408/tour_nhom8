@@ -1,3 +1,5 @@
+
+
 <main>
         <!-- search-tour -->
          <div class="bg_home">
@@ -122,32 +124,32 @@
     <div class="slider_discount">
         <div class="slider_discount-item">
             <div class="img_discount">
-                <img src="<?php echo _WEB_ROOT;?>/public/images/bg_gioithieu.png" alt="">
+                <img src="https://img.tripi.vn/cdn-cgi/image/width=640,height=640/https://www.googleapis.com/download/storage/v1/b/tourcdn/o/photos%2FZRV85VWBJ9_%2Ftmp%2Fplaytemp5686921278940583630%2FmultipartBody6470780684977509279asTemporaryFile?generation=1666768482360026&alt=media" alt="">
             </div>
         </div>
         <div class="slider_discount-item">
             <div class="img_discount">
-                <img src="<?php echo _WEB_ROOT;?>/public/images/bg_gioithieu.png" alt="">
+                <img src="https://img.tripi.vn/cdn-cgi/image/width=640,height=640/https://www.googleapis.com/download/storage/v1/b/tourcdn/o/photos%2FL6XQ72E81V_%2Ftmp%2Fplaytemp2149470245661046892%2FmultipartBody2572520586817755912asTemporaryFile?generation=1658369100965093&alt=media" alt="">
             </div>
         </div>
         <div class="slider_discount-item">
             <div class="img_discount">
-                <img src="<?php echo _WEB_ROOT;?>/public/images/bg_gioithieu.png" alt="">
+                <img src="https://img.tripi.vn/cdn-cgi/image/width=640,height=640/https://www.googleapis.com/download/storage/v1/b/tourcdn/o/photos%2FQCF7JQ0GJU_%2Ftmp%2Fplaytemp3763367819643378179%2FmultipartBody2109121900332173794asTemporaryFile?generation=1667386967144855&alt=media" alt="">
             </div>
         </div>
         <div class="slider_discount-item">
             <div class="img_discount">
-                <img src="<?php echo _WEB_ROOT;?>/public/images/bg_gioithieu.png" alt="">
+                <img src="https://img.tripi.vn/cdn-cgi/image/width=640,height=640/https://www.googleapis.com/download/storage/v1/b/tourcdn/o/photos%2F5NLAFTBNRO_%2Ftmp%2Fplaytemp9134177956193757368%2FmultipartBody2461638297266854907asTemporaryFile?generation=1663918305937659&alt=media" alt="">
             </div>
         </div>
         <div class="slider_discount-item">
             <div class="img_discount">
-                <img src="<?php echo _WEB_ROOT;?>/public/images/bg_gioithieu.png" alt="">
+                <img src="https://img.tripi.vn/cdn-cgi/image/width=640,height=640/https://www.googleapis.com/download/storage/v1/b/tourcdn/o/photos%2FQFOUISZ2FZ_%2Ftmp%2Fplaytemp589766284373697763%2FmultipartBody5556578075989957782asTemporaryFile?generation=1669878235700712&alt=media" alt="">
             </div>
         </div>
         <div class="slider_discount-item">
             <div class="img_discount">
-                <img src="<?php echo _WEB_ROOT;?>/public/images/bg_gioithieu.png" alt="">
+                <img src="https://img.tripi.vn/cdn-cgi/image/width=640,height=640/https://www.googleapis.com/download/storage/v1/b/tourcdn/o/photos%2FBXQ8OQBPE0_%2Ftmp%2Fplaytemp6666680355897505059%2FmultipartBody4111340599454951488asTemporaryFile?generation=1664961201506050&alt=media" alt="">
             </div>
         </div>       
     </div> 

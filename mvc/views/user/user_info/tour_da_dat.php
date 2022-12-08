@@ -4,6 +4,7 @@
     display:flex;
     border: 1px solid #000;
     margin-bottom: 15px;
+    margin-top: 15px;
     background-color: #fff;
 }
 .wrap_thongtindattour h2{
@@ -13,7 +14,7 @@
     width: 30px;
     display: flex;
     align-items: center;
-    background-color: #8d69f2;
+    background-color: #006dce;
     color:#fff;
 }
 
@@ -22,14 +23,9 @@
     margin: 0 40px;
 }
 
-.group-tt_dattour.gr1{
-
-}
-.group-tt_dattour.gr2{
-
-}
-.group-tt_dattour.gr3{
-
+.group-tt_dattour:last-child {
+    position: absolute;
+    right: 0;
 }
 
 .thongtindattour {
@@ -39,12 +35,12 @@
 .thongtindattour p {
     font-size: 18px;
     font-weight: 500;
-    color:#8d69f2;
+    color: #006dce;
 }
 .thongtindattour .txt_giatientour {
     font-size: 20px;
     font-weight: 700;
-    color:#8d69f2;
+    color:#006dce;
 }
 
 .thongtindattour span {
@@ -62,7 +58,7 @@
     font-weight: 600;
     border-radius: 10px;
     border: 1px solid #333;
-    background-color: #ab91f5;
+    background-color: #006dce;
     color: #fff;
     cursor:pointer;
     transition:0.15s linear;

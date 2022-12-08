@@ -5,14 +5,6 @@
                                         echo "hidden";
                                     } ?>">
         <div class="overlay__card-login">
-            <?php
-                if(isset($_SESSION['msg_vemaybay']) && isset($_SESSION['type_msg'])){
-                    echo '<div class="msg_home '.$_SESSION['type_msg'].'">
-                            <p>'.$_SESSION['msg_vemaybay'].'</p>
-                        </div>'; 
-                        unset($_SESSION['msg_vemaybay']);       
-                }
-            ?>
             <div class="login__card">
             <?php if(isset($_SESSION['msg_login']) && isset($_SESSION['type_msg'])){
                 echo '<div class="msg_log '.$_SESSION['type_msg'].'">

@@ -1,36 +1,26 @@
 
-/* let tabs = document.querySelectorAll(".menu_info-item")
 
-tabs.forEach(tab => {
-    tab.addEventListener("click", () => {
-        (document.querySelector(".active")).classList.remove("active");
-        tab.classList.add("active");
-    })
-}); */
-
-
-/* loader */
-const loader = document.querySelector('.loader');
-
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        loader.classList.add('fade_out');
-        setTimeout(() => {    
-            loader.style.display = 'none'; 
-        }, 1000);
-
-    },1000)
-})
-/*  */
-  
 let textTienTours = document.querySelectorAll('.txt_giatientour');
 textTienTours.forEach(element => {
     let txtTienTour = Number(element.innerHTML);
     element.innerHTML  =  txtTienTour.toLocaleString("en-US");
 });
 
-function tinhTienTour(){
+let textGiaNguoiLons = document.querySelectorAll('.text_gianguoilon');
+textGiaNguoiLons.forEach(element => {
+    let textGiaNguoiLon = Number(element.innerHTML);
+    element.innerHTML  =  textGiaNguoiLon.toLocaleString("en-US");
+});
 
+let textGiaTreEms = document.querySelectorAll('.text_giatreem');
+textGiaTreEms.forEach(element => {
+    let textGiaTreEm = Number(element.innerHTML);
+    element.innerHTML  =  textGiaTreEm.toLocaleString("en-US");
+});
+
+
+
+function tinhTienTour(){
     let giaTienTour = document.querySelector('.giatien_tour');
     let soNguoiLon = document.querySelector('#amount_adult').value;
     let soTreEm = document.querySelector('#amount_child').value;
@@ -53,14 +43,48 @@ function updateTienTour(){
     
     giaTienTour.setAttribute("value",String(priceValue));
 }
+
+
+function totalPrice() {
+    let giaTienNguoiLon = document.querySelector('.price_adult').innerHTML;
+    let soNguoiLon = document.querySelector('#amount_adult').value;
+    let price_adult= soNguoiLon * giaTienNguoiLon;
+
+    let giaTienTreEm = document.querySelector('.price_child').innerHTML;
+    let soTreEm = document.querySelector('#amount_child').value;
+    let price_child = soTreEm * giaTienTreEm;
     
+
+    let totalPrice = document.querySelector(".total_price");
+    totalPrice.innerHTML = (Number(price_adult + price_child)).toLocaleString("en-US");
+
+
+}
+function priceAdult(){
+    let giaTienNguoiLon = document.querySelector('.price_adult').innerHTML;
+    let soNguoiLon = document.querySelector('#amount_adult').value;
+    let price = soNguoiLon * giaTienNguoiLon;
+    let a = document.querySelector(".price_adult_h");
+    a.innerHTML = price;   
+}
+
+function priceChild() {
+    let giaTienTreEm = document.querySelector('.price_child').innerHTML;
+    let soTreEm = document.querySelector('#amount_child').value;
+    let price = soTreEm * giaTienTreEm;
+    let a = document.querySelector(".price_child_h");
+    a.innerHTML = price;   
+}
+
+
+
 let loadFile = (event) => {
     let output = document.querySelector('.avatar');
     output.src = URL.createObjectURL(event.target.files[0]);
     output.onload = () => {
       URL.revokeObjectURL(output.src)
     }
-  };
+};
 
 let load_anh_tour = (event) => {
     let output = document.querySelector('.img_tour_descr');
@@ -80,8 +104,8 @@ $(document).ready(function () {
         prevArrow: `<button type='button' class="slick-prev slick-arrow"><i class="fa-solid fa-circle-chevron-left"></i></button>`,
         nextArrow: `<button type='button' class="slick-next slick-arrow"><i class="fa-solid fa-circle-chevron-right"></i></button>`,
         dots: true,
-        /* autoplay: true,
-        autoplaySpeed: 2000, */
+        autoplay: true,
+        autoplaySpeed: 1500,
     });
 });
 

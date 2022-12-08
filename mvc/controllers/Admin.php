@@ -292,8 +292,8 @@
 
 
                 $objWriter = new PHPExcel_Writer_Excel2007($objExcel);
-                $filename = 'file_excel_user.xlsx';
-                $objWriter->save($filename);
+                $fileName = 'file_excel_user.xlsx';
+                $objWriter->save($fileName);
 
                 header('Content-Disposition: attachment; filename="'.$fileName.'"');
                 header('Content-Type: application/vnd.openxlmformatsofficedocument.speadsheetml.sheet');
@@ -356,8 +356,8 @@
                 }
 
                 $objWriter = new PHPExcel_Writer_Excel2007($objExcel);
-                $filename = 'file_excel_tour.xlsx';
-                $objWriter->save($filename);
+                $fileName = 'file_excel_tour.xlsx';
+                $objWriter->save($fileName);
 
                 header('Content-Disposition: attachment; filename="'.$fileName.'"');
                 header('Content-Type: application/vnd.openxlmformatsofficedocument.speadsheetml.sheet');

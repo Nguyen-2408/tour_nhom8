@@ -38,39 +38,6 @@
             
 </head>
 <body>
-    <style>
-    .gif_loading{
-        height: 300px;
-    }
-    .loader.fade_out {
-        animation: fade 1s alternate;
-    }
-    
-    @keyframes fade {
-        to{
-            opacity: 0;
-        }
-    }
-    .loader {
-        position: fixed;
-        top:0;
-        left:0;
-        z-index: 99999999;
-        width: 100%;
-        height: 100%;
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        background-color: rgb(243, 243, 243);
-    }
-
-    
-        </style>
-     <!-- Loading -->
-    <div class="loader">
-        <img src="<?php echo _WEB_ROOT;?>/public/images/gif_loading.gif" alt="" class="gif_loading">
-    </div>
-
     <!-- header -->
     <?php include_once './mvc/views/user/header.php';?>
     <?php

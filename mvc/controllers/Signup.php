@@ -32,7 +32,7 @@
                         $_SESSION['type_msg'] = 'error';
                     }
                 }else {
-                    if(strlen($username) < 3 || strlen($username) > 18) {
+                    if(strlen($username) < 2 || strlen($username) > 19) {
                         $_SESSION['msg_signup'] = 'Tên tài khoản chỉ từ 3 đến 18 kí tự';
                         $_SESSION['type_msg'] = 'error';
                     } else if(strlen($password) < 3){

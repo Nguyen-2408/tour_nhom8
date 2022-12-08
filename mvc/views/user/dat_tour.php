@@ -23,6 +23,30 @@
     background-color: #2cccff;
     color:#fff;
 }
+
+.wrap-desr {
+    display: flex;
+
+}
+
+.img_desr {
+    border-radius: 10px;
+    height: 300px;
+    margin-left: 30px;
+}
+
+.tour_desr {
+    width: 60%;
+    line-height: 2;   
+    padding: 20px 40px;
+    text-align: justify;
+}
+
+.lb_total {
+    font-size: 16px;
+    font-weight: 600;
+}
+
 </style>
 
 <div>
@@ -34,8 +58,10 @@
                 while($row = mysqli_fetch_assoc($data['get_tour_info'])) {
                     echo '<p style="color: #6aa7ff; font-size: 20px">'.$row['tentour'].'('.$row['songay'].'Ngày)</p>';
                 ?>
-                <p>Các địa điểm có thể ghé thăm:</p><br>
-                <p><?php echo $row['info_tour'] ?></p>
+                <div class="wrap-desr">
+                    <p class="tour_desr"><?php echo $row['info_tour'] ?></p>
+                    <img class="img_desr" src="<?php echo _WEB_ROOT;?>/public/images/img_web/<?php echo $row['anhtour'];?>" alt="">
+                </div>
 </div>
 <form action='<?php echo _WEB_ROOT;?>/thongtindattour/show_bill/<?php echo $_SESSION['user_id'] ?>' method="POST">
     <input type="hidden" name="tentour" value="<?php echo $row['tentour'] ?>">
@@ -52,11 +78,11 @@
                 </div>
                 <div class="contact_customer-item">
                     <label for="">Số điện thoại</label>
-                    <input type="text" name="dienthoai_cont" required>
+                    <input type="text" name="dienthoai_cont" required value="<?php if(isset($_SESSION['sdt'])){echo $_SESSION['sdt'];}?>">
                 </div>
                 <div class="contact_customer-item">
                     <label for="">Email</label>
-                    <input type="email" name="email_cont" required>
+                    <input type="email" name="email_cont" required value="<?php if(isset($_SESSION['sdt'])){ echo $_SESSION['email'];}?>">
                 </div>
         </div>
         </div>
@@ -64,12 +90,15 @@
         <div class="ticket_price">
                 <p class="title_price">Số lượng khách</p>
                 <div class="ticket_price-item">
-                    <label for="amount_adult">Người lớn x <input type="number" min = "1" class="amount_input" id="amount_adult" name="amount_adult" required> </label>
+                    <label for="amount_adult" onchange="totalPrice()">Người lớn x <input type="number" min = "1" class="amount_input" id="amount_adult" name="amount_adult" required></label>
                     <p><span class="price_adult"><?php echo $row['gia_nguoi_lon']; ?></span>đ/1 người lớn</p>       
                 </div>
                 <div class="ticket_price-item">
-                    <label for="amount_child">Trẻ em x <input type="number" min = "0" class="amount_input" id="amount_child" name="amount_child" required></label>
+                    <label for="amount_child" onchange="totalPrice()">Trẻ em x <input type="number" min = "0" class="amount_input" id="amount_child" name="amount_child" required></label>
                     <p><span class="price_child"><?php echo $row['gia_tre_em'];?></span>đ/1 trẻ em</p>
+                </div>
+                <div>
+                    <p style="font-size: 15px;"><span class="lb_total">Tổng tiền: </span><span class="total_price" >0</span>đ</p>
                 </div>
                 <input type="text" name="gia_tien" class="giatien_tour" hidden >
                 <?php
@@ -94,36 +123,4 @@
         </div>
 </div>
 </form>
-
-</div> 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br><br><br>
-<p class="title_price">---Có Thế Bạn Chưa Biết Về Dịch Vụ Của Chúng Tôi---</p>
-<div class="wrap_content-customer">
-<div class="wrap_ticket-price">
-    <p class="title_price">Bạn đã có phương tiện di chuyển đến địa điểm hẹn chưa?</p>
-    <p class="title_price">Chúng tôi sẽ đưa đón bạn tận nhà với dịch vụ ưu đãi nhất!</p>
-    <p class="title_price">Mời bạn chọn phương tiện!</p>
-    
-        <div>
-        <button type="button" class="btn_book">Đặt Vé Máy Bay Ngay</button>
-        </div>
-        <div>
-        <button type="button" class="btn_book">Đặt Vé Ô Tô Ngay</button>
-        </div>
-</div>
-<div class="wrap_ticket-price">
-    <p class="title_price">Một Chuyến Đi Sẽ Thú Vị Và Thoải Mái Hơn Khi Bạn Có Thời Gian Dừng Chân Nghỉ Ngơi Đúng Lúc Tại Khu Khách Sạn Sang Trọng Nhất!</p>
-    <p class="title_price">HÃY ĐẾN VỚI CHÚNG TÔI ĐÓ LÀ SỰ LỰA CHỌN TỐT NHẤT DÀNH CHO BẠN!</p>
-    <p class="title_price">Mời bạn đặt khách sạn ưu đãi với giá cực sốc!</p>
-    <div>
-        <button type="button" class="btn_book">Đặt Khách Sạn Ngay</button>
-    </div>
-</div>
 </div>

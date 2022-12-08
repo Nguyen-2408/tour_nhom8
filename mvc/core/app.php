@@ -9,7 +9,7 @@ class app {
         $this->controller = 'home';
         $this->action = 'index';
         $this->params = [];
-
+        
         $this->Urlprocess();
     }
 

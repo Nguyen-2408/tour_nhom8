@@ -27,6 +27,8 @@
                     $_SESSION['role'] = $row['role'];                      
                     $_SESSION['username'] = $row['username'];
                     $_SESSION['email'] = $row['email'];
+                    $_SESSION['sdt'] = $row['dienthoai'];
+                    $_SESSION['diachi'] = $row['diachi'];
                     $_SESSION['avatar'] = $row['avatar'];
                     if($_SESSION['role'] == 1){
                         header('location: '._WEB_ROOT.'/admin');
