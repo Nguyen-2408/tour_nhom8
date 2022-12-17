@@ -163,6 +163,13 @@
         margin-right: 10px;
         border:1px solid #333;
     }
+    .desr{
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
     </style>
 <p style="margin-top:80px;
         padding: 10px 0;
@@ -346,7 +353,7 @@ if(isset($data['edit-tour'])){
                             <img src="<?php echo _WEB_ROOT;?>/public/images/img_web/<?php echo $row['anhtour'] ?>" alt="" style="height: 200px;">
                         </td>
                         <td><?php echo $row['songay'] ?>(Ngày)</td>
-                        <td><?php echo $row['info_tour'] ?></td>
+                        <td class="desr"><?php echo $row['info_tour'] ?></td>
                         <td><?php echo $row['gia_nguoi_lon'] ?>đ</td>
                         <td><?php echo $row['gia_tre_em'] ?>đ</td>
                         <td><a href="<?php echo _WEB_ROOT;?>/admin/edit_tour/<?php echo $row['id']; ?>">Sửa</a></td>
@@ -370,7 +377,7 @@ if(isset($data['edit-tour'])){
                             <img src="<?php echo _WEB_ROOT;?>/public/images/img_web/<?php echo $row['anhtour'] ?>" alt="" style="height: 200px;">
                         </td>
                         <td><?php echo $row['songay'] ?>(Ngày)</td>
-                        <td><?php echo $row['info_tour'] ?></td>
+                        <td class="desr"><?php echo $row['info_tour'] ?></td>
                         <td><?php echo $row['gia_nguoi_lon'] ?>đ</td>
                         <td><?php echo $row['gia_tre_em'] ?>đ</td>
                         <td><a href="<?php echo _WEB_ROOT;?>/admin/edit_tour/<?php echo $row['id']; ?>">Sửa</a></td>
